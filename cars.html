@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Car | Book a Car on Rent with Revv for safe commute</title>
+    <link rel="stylesheet" href="styles/baseclasses.css">
+    <link rel="stylesheet" href="styles/cars.css">
+</head>
+<body>
+    <div id="nav-search-section">
+        <h1 class="grey">nav & search bar goes here</h1>
+    </div>
+    <div id="linksbar">
+        <a href="/">Car Rental</a> >
+        <a href="/">Rent a Car</a> >
+        <a href="/">Car Rental in ${location}</a>
+        <a href="/">Cars for Ren in ${location}</a>
+    </div>
+    <div id="main" class="d-flex">
+        <div id="filters-container" class="d-flex col">
+            <div id="filter-header" class="d-flex space-between">
+                <h2>Filters</h2>
+                <button id="reset-filter-btn">RESET ALL</button>
+            </div>
+            <div id="filters">
+                <h4>Segment</h4> 
+                <div>
+                    <input type="checkbox" id="Hatchback" name="segment" value="Hatchback"> 
+                    <label for="Hatchback">Hatchback</label>  
+                </div>
+                <div>
+                    <input type="checkbox" id="Sedan" name="segment" value="Sedan">
+                    <label for="Sedan">Sedan</label>    
+                </div>
+                <div>
+                    <input type="checkbox" id="SUV" name="segment" value="SUV">
+                    <label for="SUV">SUV</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="MUV" name="segment" value="MUV">
+                    <label for="MUV">MUV</label>
+                </div>
+                    
+                <h4>Brand</h4>
+                <div>
+                    <input type="checkbox" id='Maruti' name="brand" value="Maruti">
+                    <label for="Maruti">Maruti</label> 
+                </div>
+                <div>
+                    <input type="checkbox" id='Hyundai' name="brand" value="Hyundai">
+                    <label for="Hyundai">Hyundai</label>
+                </div>
+                <div>
+                    <input type="checkbox" id='Mahindra' name="brand" value="Mahindra">
+                    <label for="Mahindra">Mahindra</label>
+                </div>
+                <div>
+                    <input type="checkbox" id='Honda' name="brand" value="Honda">
+                    <label for="Honda">Honda</label>
+                </div>
+                <div>
+                    <input type="checkbox" id='Toyota' name="brand" value="Toyota">
+                    <label for="Toyota">Toyota</label>
+                </div>
+                <h4>Transmission Type</h4>
+                <div>
+                    <input type="checkbox" name="transmission_type" id="Automatic" value="Automatic">
+                    <label for="Automatic">Automatic</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="transmission_type" id="Manual" value="Manual">
+                    <label for="Manual">Manual</label>
+                </div>
+                <h4>Seating Capacity</h4>
+                <div>
+                    <input type="checkbox" name="seats_5" id="seats_5" value="seats_5">
+                    <label for="seats_5">5 seats</label></div>
+                <div>
+                    <input type="checkbox" name="seats_7" id="seats_7" value="seats_7">
+                    <label for="seats_7">7 Seats</label>
+                </div>
+            </div>
+        </div>
+        <div id="results-container" class="d-flex col">
+            <div id="results-header" class="d-flex space-between">
+                <h2><span class="teal">Car Rental in </span>${location}</h2>
+                <div>Price exclude fuel cost</div>
+                <div>Sort by 
+                    <select name="" id="">
+                        <option value="popularity" default >Popularity</option>
+                        <option value="price: lh">Price: Low to High</option>
+                        <option value="price: hl">Price High to Low</option>
+                        <option value="extra: lh">Extra Km Charges: Low to High</option>
+                        <option value="extra: hl">Extra Km Charges: High to Low</option>
+                    </select></div>
+            </div>
+            <div id="cards-container">
+                <div id="first-card">
+                    <img src="https://www.revv.co.in/imgs/plp_banner_web.png" alt="">
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

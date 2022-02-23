@@ -1,0 +1,29 @@
+#linksbar{
+    font-size: 10px;
+    color:teal;
+    padding:2px 40px;
+}
+
+#linksbar * {
+    color:teal;
+    text-decoration: none;
+}
+
+
+#filters-container{
+    flex: 3;
+    max-width: 350px;
+}
+#results-container{
+    flex:7;
+}
+
+#cards-container{
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-auto-rows: 300px;
+}
+
+#first-card>img{
+    width: 100%;   
+}
