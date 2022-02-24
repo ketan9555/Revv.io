@@ -31,6 +31,9 @@ function renderCards(cars){
         cards_container.append(div);
     
     })
+
+    rentsEventHandler();
+    addBookButtonEventHandler();
 }
 // code for filter related things
 let allCBs = [...document.querySelectorAll('[type="checkbox"]')]
@@ -42,6 +45,7 @@ document.getElementById('reset-filter-btn').addEventListener('click',(event)=>{
     ];
 
     activeCBs.forEach((el) => {el.checked=false});
+    renderCards(cars);
 })
 function processActiveFilters(event){
     // make a copy of carsData
@@ -53,7 +57,7 @@ function processActiveFilters(event){
         renderCards(filt_data);
         return;
     }
-    console.log(activeCBs);
+    // console.log(activeCBs);
     
     let activeSegmentCBs = activeCBs.filter(el => el.name == 'segment');
     let activeBrandCBs = activeCBs.filter((el) => el.name == "brand");
@@ -97,9 +101,11 @@ function processActiveFilters(event){
     // console.log(activeSegmentCBs);
 }
 
-let rent_el = document.querySelectorAll('.low, .avg, .Unlimited')
-rent_el = [...rent_el];
-rent_el.forEach(el => {el.addEventListener('click',select)});
+function rentsEventHandler(){
+    let rent_el = document.querySelectorAll('.low, .avg, .Unlimited')
+    rent_el = [...rent_el];
+    rent_el.forEach(el => {el.addEventListener('click',select)});
+}
 
 function select(event){
    
@@ -139,14 +145,16 @@ function select(event){
 }
 
 // implementation of book btn
+function addBookButtonEventHandler(){
+    [...document.querySelectorAll('.book-btn')].forEach(el => {el.addEventListener('click',(event) => {
+    
+        let selected = localStorage.getItem('selected');
+        let selected_car = JSON.parse(localStorage.getItem('car_selected'));
+    
+        selected_car.selected_rent = selected_car.rent[selected];
+        console.log(selected_car);
+    
+        localStorage.setItem('booking_detail',JSON.stringify(selected_car));
+    })})
 
-[...document.querySelectorAll('.book-btn')].forEach(el => {el.addEventListener('click',(event) => {
-
-    let selected = localStorage.getItem('selected');
-    let selected_car = JSON.parse(localStorage.getItem('car_selected'));
-
-    selected_car.selected_rent = selected_car.rent[selected];
-    console.log(selected_car);
-
-    localStorage.setItem('booking_detail',JSON.stringify(selected_car));
-})})
+}
