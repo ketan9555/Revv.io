@@ -28,11 +28,17 @@ function renderCards(cars){
     
     })
 }
-
+// code for filter related things
 let allCBs = [...document.querySelectorAll('[type="checkbox"]')]
 allCBs.forEach(el => {addEventListener('change',processActiveFilters);});
 
+document.getElementById('reset-filter-btn').addEventListener('click',(event)=>{
+    let activeCBs = [
+      ...document.querySelectorAll('input[type="checkbox"]:checked'),
+    ];
 
+    activeCBs.forEach((el) => {el.checked=false});
+})
 function processActiveFilters(event){
     // make a copy of carsData
     let filt_data = carsData.map(el => el);
@@ -43,7 +49,7 @@ function processActiveFilters(event){
         renderCards(filt_data);
         return;
     }
-    // console.log(activeCBs);
+    console.log(activeCBs);
     
     let activeSegmentCBs = activeCBs.filter(el => el.name == 'segment');
     let activeBrandCBs = activeCBs.filter((el) => el.name == "brand");
