@@ -48,10 +48,10 @@ for(var i=0; i<AllUsers.length; i++)
 
         let showlogo = document.getElementById("signlogo")
         showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg";
-        showname.setAttribute("id","namshow")
-        
+        showname.setAttribute("id","namshow")        
         showname.onclick = function () {
-
+             let logout =  document.createElement(h4)
+             logout.innerHTML ="Logout"
         }
         break;
       }
