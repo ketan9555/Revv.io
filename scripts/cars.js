@@ -24,7 +24,11 @@ function renderCards(cars){
     cars.forEach((el) => {
         div = document.createElement("div");
         div.innerHTML = rentCard(el);
-    cards_container.append(div);
+        div.addEventListener('click',() => {
+            localStorage.setItem('car_selected',JSON.stringify(el));
+        });
+
+        cards_container.append(div);
     
     })
 }
@@ -98,14 +102,14 @@ rent_el = [...rent_el];
 rent_el.forEach(el => {el.addEventListener('click',select)});
 
 function select(event){
-    console.log('clki');
+   
     let selected = localStorage.getItem('selected');
     if(selected!= undefined){
         [...document.querySelectorAll(`.${selected}`)].forEach(el => { el.classList.remove('selected')});
     }
 
     if(event.target.classList.contains('low')){
-      console.log('low');
+    //   console.log('low');
 
       localStorage.setItem("selected", "low");
 
@@ -114,7 +118,7 @@ function select(event){
       });
     }
     else if(event.target.classList.contains('avg')){
-      console.log("avg");
+    //   console.log("avg");
         
         localStorage.setItem("selected", "avg");
 
@@ -123,7 +127,7 @@ function select(event){
         });
     }
     else if(event.target.classList.contains('Unlimited')){
-      console.log("Unlimited");
+    //   console.log("Unlimited");
         
         localStorage.setItem("selected", "Unlimited");
 
@@ -133,3 +137,16 @@ function select(event){
     }
 
 }
+
+// implementation of book btn
+
+[...document.querySelectorAll('.book-btn')].forEach(el => {el.addEventListener('click',(event) => {
+
+    let selected = localStorage.getItem('selected');
+    let selected_car = JSON.parse(localStorage.getItem('car_selected'));
+
+    selected_car.selected_rent = selected_car.rent[selected];
+    console.log(selected_car);
+
+    localStorage.setItem('booking_detail',JSON.stringify(selected_car));
+})})

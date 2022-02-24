@@ -23,7 +23,7 @@ function rentCard(car){
                         </div>
                         <div class="rent-details ">
                             <div class="d-flex space-between">
-                                <div class="low d-flex col teal p-20 b">
+                                <div class="low d-flex col teal p-20 ">
                                     <p class="price nmt-10">${rent.low}</p>
                                     <p class="distance small-txt ">150 kms</p>
                                 </div>
