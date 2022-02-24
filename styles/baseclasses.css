@@ -50,3 +50,12 @@ body > div {
 .small-txt{
     font-size: 10px;
 }
+.text-centre{
+    text-align: center;
+}
+.nmt-10{
+    margin-top: -10px;
+}
+.b{
+    border:1px solid;
+}
