@@ -27,11 +27,11 @@ function rentCard(car){
                                     <p class="price nmt-10">${rent.low}</p>
                                     <p class="distance small-txt ">150 kms</p>
                                 </div>
-                                <div class="low d-flex col teal p-20">
+                                <div class="avg d-flex col teal p-20">
                                     <p class="price nmt-10">${rent.avg}</p>
                                     <p class="distance small-txt ">450 km</p>
                                 </div>
-                                <div class="low d-flex col teal p-20">
+                                <div class="Unlimited d-flex col teal p-20">
                                     <p class="price nmt-10">${rent.Unlimited}</p>
                                     <p class="distance small-txt ">Unlimited </p>
                                 </div>

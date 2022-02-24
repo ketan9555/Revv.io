@@ -31,7 +31,7 @@ function renderCards(cars){
 // code for filter related things
 let allCBs = [...document.querySelectorAll('[type="checkbox"]')]
 allCBs.forEach(el => {addEventListener('change',processActiveFilters);});
-
+// implementation of reset button
 document.getElementById('reset-filter-btn').addEventListener('click',(event)=>{
     let activeCBs = [
       ...document.querySelectorAll('input[type="checkbox"]:checked'),
@@ -91,4 +91,45 @@ function processActiveFilters(event){
 
 
     // console.log(activeSegmentCBs);
+}
+
+let rent_el = document.querySelectorAll('.low, .avg, .Unlimited')
+rent_el = [...rent_el];
+rent_el.forEach(el => {el.addEventListener('click',select)});
+
+function select(event){
+    console.log('clki');
+    let selected = localStorage.getItem('selected');
+    if(selected!= undefined){
+        [...document.querySelectorAll(`.${selected}`)].forEach(el => { el.classList.remove('selected')});
+    }
+
+    if(event.target.classList.contains('low')){
+      console.log('low');
+
+      localStorage.setItem("selected", "low");
+
+      [...document.querySelectorAll(".low")].forEach((el) => {
+        el.classList.add("selected");
+      });
+    }
+    else if(event.target.classList.contains('avg')){
+      console.log("avg");
+        
+        localStorage.setItem("selected", "avg");
+
+        [...document.querySelectorAll(".avg")].forEach((el) => {
+          el.classList.add("selected");
+        });
+    }
+    else if(event.target.classList.contains('Unlimited')){
+      console.log("Unlimited");
+        
+        localStorage.setItem("selected", "Unlimited");
+
+        [...document.querySelectorAll(".Unlimited")].forEach((el) => {
+          el.classList.add("selected");
+        });
+    }
+
 }
