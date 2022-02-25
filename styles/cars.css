@@ -62,6 +62,8 @@
 }
 .low,.avg,.Unlimited{
     background-color: #E3E3E3;
+    margin: 0px 1px;
+    border-radius: 0px;
 
 }
 .rent-details > div{
@@ -91,7 +93,7 @@
 }
 @keyframes jump {
     0%{ transform: translate(0px,0px);}
-    50%{transform: translate(0px,-10px);}
+    50%{transform: translate(0px,-5px);}
     100%{transform: translate(0px,0px);}
 }
 .selected{
@@ -99,6 +101,15 @@
     background-color: white;
 }
 
+#inc_exc{
+    text-decoration: underline;
+    font-weight: bold;
+}
+#fuel_ie ~ img{
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
 
 @media screen and (max-width:990px) and (min-width:321px){
     #cards-container{

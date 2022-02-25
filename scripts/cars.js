@@ -18,16 +18,18 @@ var i = 0;
 let carsData = JSON.parse(localStorage.getItem("cars"));
 // extra & popularity properities to objects
 carsData = carsData.map((el) => {
-  el.extra = Math.round(Math.random() * 8) + 5;
+  el.extra = Math.round(Math.random() * 10) + 5;
   el.popularity = Math.round(Math.random() * 100);
   return el;
 });
+localStorage.setItem("cars", JSON.stringify(carsData));
+
 // console.log(carsData);
 renderCards(processActiveFilters(carsData));
 // render cars data ;
 function renderCards(carList,) {
   console.log("in render function",i++);
-  console.log(carList);
+  // console.log(carList);
   cards_container.textContent = "";
   // cards_container.append(firstCard());
   let div = document.createElement("div");
@@ -49,7 +51,7 @@ function renderCards(carList,) {
 }
 // code for filter related things
 
-let allCBs = [...document.querySelectorAll('[type="checkbox"]')];
+let allCBs = [...document.querySelectorAll('filters [type="checkbox"]')];
 
 // add event listeners to all checkboxes
 allCBs.forEach((el) => {addEventListener("change", updateContent)});
@@ -231,9 +233,9 @@ function sortItems(event) {
 // console.log(processActiveFilters());
 function sortByPrice(reverse = false, data) {
   let selected = localStorage.getItem("selected") || "low";
-  console.log("before", data);
+  // console.log("before", data);
   let sorted_data = data.sort((a, b) => {
-    console.log(a.rent[selected], b.rent[selected]);
+    // console.log(a.rent[selected], b.rent[selected]);
     if (reverse) {
       return +b.rent[selected] - +a.rent[selected];
     } else {
@@ -241,7 +243,7 @@ function sortByPrice(reverse = false, data) {
     }
   });
 
-  console.log("after", sorted_data);
+  // console.log("after", sorted_data);
   return data;
 
 }
@@ -269,3 +271,27 @@ function sortByPopularity(data){
   data.sort((a,b) => a.popularity - b.popularity);
   return data;
 }
+
+// fuelcost checkbox
+document.getElementById('fuel_ie').addEventListener('change',(event)=>
+{
+  event.stopPropagation();
+  let value = 'excludes';
+  localStorage.setItem('fuel_charge','Excluded')
+  carsData = JSON.parse(localStorage.getItem('cars'));
+  if(document.getElementById('fuel_ie').checked){
+    value = 'includes';
+    localStorage.setItem('fuel_charge','Included');
+    // console.log(typeof carsData)
+    carsData = carsData.map(el => {
+      el.rent.low += 1200;
+      el.rent.avg += 1100;
+      el.rent.Unlimited += 1050;
+      el.extra +=3;
+      return el;
+    })
+  }
+  renderCards(processActiveFilters(carsData));
+
+  document.getElementById('inc_exc').textContent=value;
+})
