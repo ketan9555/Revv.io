@@ -13,20 +13,28 @@ localStorage.setItem("cars", JSON.stringify(cars));
 
 const res_container = document.getElementById("results-container");
 const cards_container = document.getElementById("cards-container");
+var i = 0;
 
 let carsData = JSON.parse(localStorage.getItem("cars"));
-// console.log(cars);
+// extra & popularity properities to objects
+carsData = carsData.map((el) => {
+  el.extra = Math.round(Math.random() * 8) + 5;
+  el.popularity = Math.round(Math.random() * 100);
+  return el;
+});
+// console.log(carsData);
+renderCards(processActiveFilters(carsData));
 // render cars data ;
-renderCards(carsData);
-
-function renderCards(cars) {
+function renderCards(carList,) {
+  console.log("in render function",i++);
+  console.log(carList);
   cards_container.textContent = "";
   // cards_container.append(firstCard());
   let div = document.createElement("div");
   div.innerHTML = firstCard();
   cards_container.append(div);
 
-  cars.forEach((el) => {
+  carList.forEach((el) => {
     div = document.createElement("div");
     div.innerHTML = rentCard(el);
     div.addEventListener("click", () => {
@@ -35,15 +43,21 @@ function renderCards(cars) {
 
     cards_container.append(div);
   });
-
+  // add event handlers rent-details, and book button
   rentsEventHandler();
   addBookButtonEventHandler();
 }
 // code for filter related things
+
 let allCBs = [...document.querySelectorAll('[type="checkbox"]')];
-allCBs.forEach((el) => {
-  addEventListener("change", processActiveFilters);
-});
+
+// add event listeners to all checkboxes
+allCBs.forEach((el) => {addEventListener("change", updateContent)});
+
+function updateContent(){
+  renderCards(processActiveFilters());
+}
+
 // implementation of reset button
 document
   .getElementById("reset-filter-btn")
@@ -55,19 +69,19 @@ document
     activeCBs.forEach((el) => {
       el.checked = false;
     });
-    renderCards(cars);
+    renderCards(processActiveFilters());
   });
-function processActiveFilters(event) {
+
+function processActiveFilters() {
   // make a copy of carsData
   let filt_data = carsData.map((el) => el);
-  let activeCBs = [
-    ...document.querySelectorAll('input[type="checkbox"]:checked'),
-  ];
+
+  //   console.log(filt_data);
+  let activeCBs = [...document.querySelectorAll('input[type="checkbox"]:checked')];
 
   // if there are no active CBs
   if (activeCBs.length == 0) {
-    renderCards(filt_data);
-    return;
+    return filt_data;
   }
   // console.log(activeCBs);
 
@@ -107,11 +121,9 @@ function processActiveFilters(event) {
     let segments = activeSegmentCBs.map((el) => el.value);
     filt_data = filterBySegment(segments, filt_data);
   }
-
-  // console.log(filt_data);
-  renderCards(filt_data);
-
-  // console.log(activeSegmentCBs);
+  // console.log('paf',filt_data);
+  return filt_data;
+  
 }
 
 function rentsEventHandler() {
@@ -131,7 +143,7 @@ function select(event) {
     el.classList.remove("selected");
   });
 
-// this refers to the element which captured the event
+  // this refers to the element which captured the event
   if (this.classList.contains("low")) {
     // console.log("low");
 
@@ -167,9 +179,93 @@ function addBookButtonEventHandler() {
       let selected_car = JSON.parse(localStorage.getItem("car_selected"));
 
       selected_car.selected_rent = selected_car.rent[selected];
+      selected_car.selected_Key = selected;
       console.log(selected_car);
 
       localStorage.setItem("booking_detail", JSON.stringify(selected_car));
     });
   });
+}
+
+document.getElementById("sort").addEventListener("change", sortItems);
+
+function sortItems(event) {
+  const PLH = "price:lh";
+  const PHL = "price:hl";
+  const ELH = "extra:lh";
+  const EHL = "extra:hl";
+  const POP = "popularity";
+
+  let value = document.getElementById("sort").value;
+  // console.log(value);
+  let data = processActiveFilters();
+  switch (value) {
+    case PLH:
+      data = sortByPrice(false, data);
+      break;
+    case PHL:
+      sortByPrice(true, data);
+      break;
+    case ELH:
+      console.log("elh");
+      sortByExtra(false, data);
+      break;
+    case EHL:
+      sortByExtra(true, data);
+      break;
+    case POP:
+      sortByPopularity(data);
+      break;
+
+  }
+  let extras = [];
+  data.forEach((el) => extras.push(el.extra));
+  console.log("after sort", extras);
+  renderCards(data);
+  let selected = localStorage.getItem("selected") || "low";
+   [...document.querySelectorAll(`.${selected}`)].forEach((el) => {
+     el.classList.add("selected");
+   });
+  event.stopPropagation();
+}
+// console.log(processActiveFilters());
+function sortByPrice(reverse = false, data) {
+  let selected = localStorage.getItem("selected") || "low";
+  console.log("before", data);
+  let sorted_data = data.sort((a, b) => {
+    console.log(a.rent[selected], b.rent[selected]);
+    if (reverse) {
+      return +b.rent[selected] - +a.rent[selected];
+    } else {
+      return +a.rent[selected] - +b.rent[selected];
+    }
+  });
+
+  console.log("after", sorted_data);
+  return data;
+
+}
+
+// sort funcion is working
+function sortByExtra(reverse = false, data) {
+  let mul = 1;
+  if (reverse) mul = -1;
+  // data.sort((a,b)=> a.extra - b.extra);
+  data.sort(function (a, b) {
+    // console.log(data);
+    if (a.extra > b.extra) {
+      return 1 * mul;
+    }
+    if (a.extra < b.extra) {
+      return -1 * mul;
+    }
+    return 0;
+  });
+  console.log("after", data);
+  return data;
+}
+
+function sortByPopularity(data){
+  data.sort((a,b) => a.popularity - b.popularity);
+  return data;
 }
