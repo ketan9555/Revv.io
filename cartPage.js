@@ -16,18 +16,69 @@ let data = {
     rent : 4949,
         // low :  3479,
         // avg :  4949,
-        // Unlimited : 5439,
-    
+        // Unlimited : 5439,   
 }
+let startdate = "25-02-2022 "
+let ensdate = "27-02-2022"
+let city = "Pune"
+localStorage.setItem("startdate",JSON.stringify(startdate));
+localStorage.setItem("ensdate",JSON.stringify(ensdate))
+localStorage.setItem("city",JSON.stringify(city))
+
+var sdate = JSON.parse(localStorage.getItem("startdate"));
+var edate = JSON.parse(localStorage.getItem("ensdate"));
+var selectdcity = JSON.parse(localStorage.getItem("city"));
 
 localStorage.setItem("selectedcar",JSON.stringify(data))
 let imgg = document.getElementById("carimg")
 let one = document.getElementById("one")
 
 var mycar = JSON.parse(localStorage.getItem("selectedcar"))
-cardetails()
+cardetails();
 
 function cardetails(){
+
+    let div0 = document.getElementById("date");
+    let div00 = document.getElementById("Nodays");
+    let div11 = document.getElementById("c");
+    let div22 = document.getElementById("p");
+
+    let startdate = document.createElement("h4");
+    startdate.innerHTML = sdate;
+
+    let enddate = document.createElement("h4");
+    enddate.innerHTML = edate;
+
+    let to = document.createElement("p");
+    to.innerHTML = "To";
+
+    div0.append(startdate,to,enddate);
+
+    let d1 = sdate.split("-");
+    let d2 = edate.split("-")
+    let sub = +d2[0] - +d1[0];
+    console.log(sub)
+
+    let Nodate = document.createElement("p");
+    Nodate.innerHTML = `<i class="far fa-clock"></i>  ` + sub + " Days";
+    div00.append(Nodate);
+
+    let cit = document.createElement("h4");
+    cit.innerHTML = selectdcity ;
+
+    let plann = document.createElement("h4");
+    plann.innerHTML ="Pricing Plan:" + "Includes 490 kms," +"excludes" + "fuel";
+
+    div11.append(cit);
+    div22.append(plann);
+
+
+    let days = document.createElement("p");
+    days.innerHTML = `<i class="fas fa-rupee-sign"></i> ` + "mycar.rent "+ "days";
+
+    let plan = document.createElement("p");
+    plan.innerHTML = "Pricing Plan: Includes";
+
     
     let img = document.createElement("img");
     img.src = mycar.imgUrl;
@@ -108,8 +159,6 @@ function cardetails(){
       var td8 = document.createElement("td");
       td8.textContent = "Refundable security deposit";
 
-
-
       tr4.append(td8,td7)
 
       thead.append(tr1,tr2,tr3,tr4)
@@ -133,7 +182,6 @@ function cardetails(){
 
       total.append(tr5,hr)
       one.append(table)
-
 
 
 let two = document.getElementById("two")
@@ -179,10 +227,10 @@ document.querySelector("#promobutton").addEventListener("click", function(){
         alert.color="red"
     }   
     else if(pcode.value == "masai30"){
-    let y = Math.floor((x*70)/100);
+    let y = Math.floor((x*80)/100);
     // console.log("total",x)
     flag =1;
-    alert("Congratulations,You get 30% OFF");
+    alert("Congratulations,You get 20% OFF");
     let add = document.getElementById("add")
     add.innerHTML = `<i class="fas fa-rupee-sign"></i> ${y} `
 }
@@ -191,4 +239,43 @@ else{
 }
 })
 
+// let map = document.getElementsByClassName("selactmap");
+// let add = document.getElementsByClassName("gmap_iframe");
+// add.src = `https://maps.google.com/maps?width=600&q=pune&amp;height=400&amp;hl=en&amp;q=&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed`
+
 }
+
+// const  rundata = async (e) => {   
+//     try {
+//         if (e === "Enter"){
+//             // document.getElementById("container").innerHTML =null;
+//             let value = map.value;
+//             let add = document.getElementsByClassName("gmap_iframe");
+//             add.src = `https://maps.google.com/maps?width=600&q=${pune}&amp;height=400&amp;hl=en&amp;q=&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed`           
+//         }
+//     }
+//     catch (err) {
+//         // alert("please enter correct item")
+//         // let errr = document.createElement("img")
+//         // errr.src = "https://c.tenor.com/oGqmSDzGn3gAAAAC/busubusu8-cute.gif";
+//         // errr.style = "margin:0 300px;width:700px"
+//         // parent.append(errr)      
+//         console.log(err)  
+//     }
+// }
+
+let map = document.getElementsByClassName("selactmap");
+map.keypress =rundata() 
+
+function rundata() {
+    console.log("a")
+    if (add.keypress === "Enter"){
+        // document.getElementById("container").innerHTML =null;
+        let value = map.value;
+        let add = document.getElementsByClassName("gmap_iframe");
+        add.src = `https://maps.google.com/maps?width=600&q=${pune}&amp;height=400&amp;hl=en&amp;q=&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed`           
+    }
+};
+
+rundata()
+

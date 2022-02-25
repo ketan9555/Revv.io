@@ -121,6 +121,42 @@
             text-decoration: none;
             padding: 30px;
         }
+        #date {
+            display: flex;
+            margin:10% 20% -2% 20%;
+            
+        }
+        #carinfo {
+            text-align: center;
+        }
+        #city {
+            margin: 5% 30%;
+            display: flex;
+            
+        }
+        #plan {
+            display: flex;
+            margin: 1% 5%;
+            text-align: center;
+        }
+        #Nodays {
+            margin-left: -10%;
+        }
+        .mapouter { 
+            position:relative;
+            text-align:right;
+            width:100%;
+            height:400px;
+        }
+        .gmap_canvas {
+            overflow:hidden;
+            background:none!important;
+            width:100%;
+            height:400px;
+        }
+        .gmap_iframe {
+            height:400px!important;
+        }
   
 
         
@@ -138,7 +174,22 @@
                 <div id="carinfo">
                     <h3 class="titleHeading">
                         <span class="titleHeadingSpan">BOOKING DETAILS</span></h3>
+                <div id="date">
+                    
                 </div>
+                <div id="Nodays"></div>
+                <div id="city">
+                    <div id="c"></div>
+                    <div><a href="">Change City</a></div>
+                    
+                </div>
+                <div id="plan">
+                    <div id="p"></div>
+                    <div><a href="">Change Plan</a></div>
+                    
+                </div>
+                
+                    </div>
                
             </div>
             <div id="impoPoints">
@@ -178,10 +229,17 @@
         <div id="two"></div>
 
         <div id="location">
-            <img src="https://maps.google.com/maps?t=&z=13&ie=UTF8&iwloc=&output=embed" alt="">
+            <img src="" alt="">
         </div>
         <button id="pay">Pay</button>
-            </div>       
+        </div>   
+        <div id="map">
+            <input type="text" id="selactmap" placeholder="select delivery address">
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="">   
+                    </iframe><a href="https://kokagames.com/">FNF</a></div></div>
+        </div>    
     </div>
   
 </div>
@@ -191,3 +249,4 @@
 </body>
 </html>
 <script type="module" src="cartPage.js"></script>
+<script type="module" src="index.js"></script>
