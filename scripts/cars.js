@@ -26,12 +26,53 @@ localStorage.setItem("cars", JSON.stringify(carsData));
 
 // console.log(carsData);
 renderCards(processActiveFilters(carsData));
+// renderCards([]);
+
 // render cars data ;
 function renderCards(carList,) {
   console.log("in render function",i++);
   // console.log(carList);
   cards_container.textContent = "";
-  // cards_container.append(firstCard());
+  if(carList.length == 0){
+    cards_container.classList.add('no-elements');
+    let div = document.createElement('div');
+    div.classList.add('text-centre');
+
+    let img_div = document.createElement('div');
+    let img = document.createElement('img');
+    img.src = "https://www.revv.co.in/imgs/icons/info-grey.svg";
+
+    img_div.append(img);
+    let h3 = document.createElement('h3');
+    h3.textContent = 'Sorry ! No results found';
+    h3.style.fontWeight = '100';
+
+    let p = document.createElement('p');
+    p.textContent = 'Please modify your filters to see results';
+
+    let or = document.createElement('p');
+    or.textContent = 'or';
+
+    let reset_filt_btn = document.createElement('button');
+    reset_filt_btn.textContent = 'Reset Filters';
+    reset_filt_btn.id = 'reset-filter-btn2';
+
+    reset_filt_btn.addEventListener('click',(event)=>{
+      let activeCBs = [
+        ...document.querySelectorAll('input[type="checkbox"]:checked'),
+      ];
+
+      activeCBs.forEach((el) => {
+        el.checked = false;
+      });
+      renderCards(processActiveFilters());
+    })
+
+    div.append(img_div,h3,p,or,reset_filt_btn);
+    cards_container.append(div);
+    return;
+  }
+  cards_container.classList.remove('no-elements');
   let div = document.createElement("div");
   div.innerHTML = firstCard();
   cards_container.append(div);
@@ -51,7 +92,7 @@ function renderCards(carList,) {
 }
 // code for filter related things
 
-let allCBs = [...document.querySelectorAll('filters [type="checkbox"]')];
+let allCBs = [...document.querySelectorAll('#filters [type="checkbox"]')];
 
 // add event listeners to all checkboxes
 allCBs.forEach((el) => {addEventListener("change", updateContent)});
