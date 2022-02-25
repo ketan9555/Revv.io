@@ -18,8 +18,8 @@
     </div>
     <div id="linksbar">
       <a href="/">Car Rental</a> > <a href="/">Rent a Car</a> >
-      <a href="/">Car Rental in ${location}</a>
-      <a href="/">Cars for Ren in ${location}</a>
+      <a href="/">Car Rental in <span class="loc"></span></a>
+      <a href="/">Cars for Ren in <span class="loc"></span></a>
     </div>
     <div id="main" class="d-flex space-between">
       <div id="filters-container" class="d-flex col mr-10">
@@ -128,7 +128,7 @@
       </div>
       <div id="results-container" class="d-flex col">
         <div id="results-header" class="d-flex space-between">
-          <h2><span class="teal">Car Rental in </span>${location}</h2>
+          <h2><span class="teal">Car Rental in </span> <span class="loc"></span></h2>
           <div>
             <input type="checkbox" name="" id="fuel_ie" value="Included" />
             Price <span id="inc_exc">includes</span> fuel cost

@@ -22,6 +22,9 @@
 #results-container{
     flex:7;
 }
+#results-header{
+    align-items: center;
+}
 
 #cards-container{
     display: grid;

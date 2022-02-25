@@ -36,7 +36,7 @@ const location_span = document.getElementById('location-span');
 // function to update location variable
 function updateLocation(location){
     // console.log(location_el);
-    location_el.textContent = location;
+    location_el.innerHTML = `${location} <i class="fas fa-chevron-down">`;
     location_span.textContent = location;
 }
 
@@ -56,3 +56,16 @@ function toggleAnswer(event){
     event.target.firstElementChild.classList.toggle('fa-plus');
     event.target.nextElementSibling.classList.toggle('hide-ans');
 }
+
+document.getElementById('search-btn').addEventListener('click',(event)=>{
+
+    let startdate = document.getElementById('startdate').value;
+    let location = localStorage.getItem('location');
+
+    /// store to localStorage
+    localStorage.setItem('startdate',startdate);
+    localStorage.setItem('city',location);
+
+    console.log(startdate);
+    window.location.href ='../cars.html';
+})

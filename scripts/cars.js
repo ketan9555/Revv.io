@@ -13,6 +13,12 @@ localStorage.setItem("cars", JSON.stringify(cars));
 
 const res_container = document.getElementById("results-container");
 const cards_container = document.getElementById("cards-container");
+
+let location_spans = [...document.querySelectorAll('.loc')];
+
+for( let span of location_spans){
+  span.textContent = localStorage.getItem('city');
+}
 var i = 0;
 
 let carsData = JSON.parse(localStorage.getItem("cars"));
