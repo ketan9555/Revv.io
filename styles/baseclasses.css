@@ -7,7 +7,7 @@ body{
 div{
     /* border: 2px solid black; */
     /* margin: 5px; */
-    border-radius: 7px
+    /* border-radius: 7px */
 }
 
 body > div {
@@ -58,4 +58,7 @@ body > div {
 }
 .b{
     border:1px solid;
+}
+.br{
+    border-right: 1px solid;
 }

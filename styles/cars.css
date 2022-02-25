@@ -13,11 +13,12 @@
 #filters-container{
     flex: 3;
     max-width: 350px;
-    border-top: 1px solid;
-    border-right: 1px solid;
-
+    border-top: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-radius: 2px;
 
 }
+
 #results-container{
     flex:7;
 }
@@ -54,7 +55,13 @@
 }
 .rentCard{
     padding: 0px;
-    border: 1px solid lightgrey
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    transition: box-shadow 0.7s;
+}
+.rentCard:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 .car-details{
     background-color: #f1f1f1;
@@ -107,7 +114,7 @@
     100%{transform: translate(0px,0px);}
 }
 .selected{
-    animation: jump 1s linear 1;
+    animation: jump 0.7s linear 1;
     background-color: white;
 }
 
@@ -126,6 +133,12 @@
     justify-content: center;
     align-items: center;
     border: 1px solid;
+}
+.rent-links{
+    text-decoration: none;
+    color:teal;
+    padding:0px  5px;
+    border-right: 1px solid;
 }
 @media screen and (max-width:990px) and (min-width:321px){
     #cards-container{

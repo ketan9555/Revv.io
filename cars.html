@@ -1,122 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rent a Car | Book a Car on Rent with Revv for safe commute</title>
-    <link rel="stylesheet" href="styles/baseclasses.css">
-    <link rel="stylesheet" href="styles/cars.css">
+    <link rel="stylesheet" href="styles/baseclasses.css" />
+    <link rel="stylesheet" href="styles/cars.css" />
     <script
       src="https://kit.fontawesome.com/8e42604464.js"
       crossorigin="anonymous"
     ></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="nav-search-section">
-        <h1 class="grey">nav & search bar goes here</h1>
+      <h1 class="grey">nav & search bar goes here</h1>
     </div>
     <div id="linksbar">
-        <a href="/">Car Rental</a> >
-        <a href="/">Rent a Car</a> >
-        <a href="/">Car Rental in ${location}</a>
-        <a href="/">Cars for Ren in ${location}</a>
+      <a href="/">Car Rental</a> > <a href="/">Rent a Car</a> >
+      <a href="/">Car Rental in ${location}</a>
+      <a href="/">Cars for Ren in ${location}</a>
     </div>
     <div id="main" class="d-flex space-between">
-        <div id="filters-container" class="d-flex col mr-10">
-            <div id="filter-header" class="d-flex space-between">
-                <h2>Filters</h2>
-                <button id="reset-filter-btn">RESET ALL</button>
-            </div>
-            <div id="filters">
-                <h4>Segment</h4> 
-                <div>
-                    <input type="checkbox" id="Hatchback" name="segment" value="Hatchback"> 
-                    <label for="Hatchback">Hatchback</label>  
-                </div>
-                <div>
-                    <input type="checkbox" id="Sedan" name="segment" value="Sedan">
-                    <label for="Sedan">Sedan</label>    
-                </div>
-                <div>
-                    <input type="checkbox" id="SUV" name="segment" value="SUV">
-                    <label for="SUV">SUV</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="MUV" name="segment" value="MUV">
-                    <label for="MUV">MUV</label>
-                </div>
-                    
-                <h4>Brand</h4>
-                <div>
-                    <input type="checkbox" id='Maruti' name="brand" value="Maruti">
-                    <label for="Maruti">Maruti</label> 
-                </div>
-                <div>
-                    <input type="checkbox" id='Hyundai' name="brand" value="Hyundai">
-                    <label for="Hyundai">Hyundai</label>
-                </div>
-                <div>
-                    <input type="checkbox" id='Mahindra' name="brand" value="Mahindra">
-                    <label for="Mahindra">Mahindra</label>
-                </div>
-                <div>
-                    <input type="checkbox" id='Honda' name="brand" value="Honda">
-                    <label for="Honda">Honda</label>
-                </div>
-                <div>
-                    <input type="checkbox" id='Toyota' name="brand" value="Toyota">
-                    <label for="Toyota">Toyota</label>
-                </div>
-                <h4>Fuel Type</h4>
-                <div>
-                    <input type="checkbox" name="fuel" id="Diesel" value="Diesel">
-                    <label for="Diesel">Diesel</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="fuel" id="Petrol" value="Petrol">
-                    <label for="Petrol">Petrol</label>
-                </div>
-                <h4>Transmission Type</h4>
-                <div>
-                    <input type="checkbox" name="transmission_type" id="Automatic" value="Automatic">
-                    <label for="Automatic">Automatic</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="transmission_type" id="Manual" value="Manual">
-                    <label for="Manual">Manual</label>
-                </div>
-                <h4>Seating Capacity</h4>
-                <div>
-                    <input type="checkbox" name="seating_capacity" id="seats_5" value="5">
-                    <label for="seats_5">5 seats</label></div>
-                <div>
-                    <input type="checkbox" name="seating_capacity" id="seats_7" value="7">
-                    <label for="seats_7">7 Seats</label>
-                </div>
-            </div>
+      <div id="filters-container" class="d-flex col mr-10">
+        <div id="filter-header" class="d-flex space-between">
+          <h2>Filters</h2>
+          <button id="reset-filter-btn">RESET ALL</button>
         </div>
-        <div id="results-container" class="d-flex col">
-            <div id="results-header" class="d-flex space-between">
-                <h2><span class="teal">Car Rental in </span>${location}</h2>
-                <div>
-                    <input type="checkbox" name="" id="fuel_ie" value="Included">   Price <span id="inc_exc">includes</span>  fuel cost <img src="https://www.revv.co.in/grapheneImages/CarsAndPricing/info-icon.svg" alt=""> </div>
-                <div>Sort by 
-                    <select name="sort" id="sort">
-                        <option value="popularity" default >Popularity</option>
-                        <option value="price:lh">Price: Low to High</option>
-                        <option value="price:hl">Price High to Low</option>
-                        <option value="extra:lh">Extra Km Charges: Low to High</option>
-                        <option value="extra:hl">Extra Km Charges: High to Low</option>
-                    </select></div>
-            </div>
-            <div id="cards-container">
-               
-               
-               
-            </div>
+        <div id="filters">
+          <h4>Segment</h4>
+          <div>
+            <input
+              type="checkbox"
+              id="Hatchback"
+              name="segment"
+              value="Hatchback"
+            />
+            <label for="Hatchback">Hatchback</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Sedan" name="segment" value="Sedan" />
+            <label for="Sedan">Sedan</label>
+          </div>
+          <div>
+            <input type="checkbox" id="SUV" name="segment" value="SUV" />
+            <label for="SUV">SUV</label>
+          </div>
+          <div>
+            <input type="checkbox" id="MUV" name="segment" value="MUV" />
+            <label for="MUV">MUV</label>
+          </div>
+
+          <h4>Brand</h4>
+          <div>
+            <input type="checkbox" id="Maruti" name="brand" value="Maruti" />
+            <label for="Maruti">Maruti</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Hyundai" name="brand" value="Hyundai" />
+            <label for="Hyundai">Hyundai</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="Mahindra"
+              name="brand"
+              value="Mahindra"
+            />
+            <label for="Mahindra">Mahindra</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Honda" name="brand" value="Honda" />
+            <label for="Honda">Honda</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Toyota" name="brand" value="Toyota" />
+            <label for="Toyota">Toyota</label>
+          </div>
+          <h4>Fuel Type</h4>
+          <div>
+            <input type="checkbox" name="fuel" id="Diesel" value="Diesel" />
+            <label for="Diesel">Diesel</label>
+          </div>
+          <div>
+            <input type="checkbox" name="fuel" id="Petrol" value="Petrol" />
+            <label for="Petrol">Petrol</label>
+          </div>
+          <h4>Transmission Type</h4>
+          <div>
+            <input
+              type="checkbox"
+              name="transmission_type"
+              id="Automatic"
+              value="Automatic"
+            />
+            <label for="Automatic">Automatic</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="transmission_type"
+              id="Manual"
+              value="Manual"
+            />
+            <label for="Manual">Manual</label>
+          </div>
+          <h4>Seating Capacity</h4>
+          <div>
+            <input
+              type="checkbox"
+              name="seating_capacity"
+              id="seats_5"
+              value="5"
+            />
+            <label for="seats_5">5 seats</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="seating_capacity"
+              id="seats_7"
+              value="7"
+            />
+            <label for="seats_7">7 Seats</label>
+          </div>
         </div>
+      </div>
+      <div id="results-container" class="d-flex col">
+        <div id="results-header" class="d-flex space-between">
+          <h2><span class="teal">Car Rental in </span>${location}</h2>
+          <div>
+            <input type="checkbox" name="" id="fuel_ie" value="Included" />
+            Price <span id="inc_exc">includes</span> fuel cost
+            <img
+              src="https://www.revv.co.in/grapheneImages/CarsAndPricing/info-icon.svg"
+              alt=""
+            />
+          </div>
+          <div>
+            Sort by
+            <select name="sort" id="sort">
+              <option value="popularity" default>Popularity</option>
+              <option value="price:lh">Price: Low to High</option>
+              <option value="price:hl">Price High to Low</option>
+              <option value="extra:lh">Extra Km Charges: Low to High</option>
+              <option value="extra:hl">Extra Km Charges: High to Low</option>
+            </select>
+          </div>
+        </div>
+        <div id="cards-container"></div>
+        <div id="linksToPlaces">
+          <h3>Rent car by Make</h3>
+          <div>
+            <a href="" class="rent-links">Maruti</a>
+            <a href="" class="rent-links">Hyundai</a>
+            <a href="" class="rent-links">Mahindra</a>
+            <a href="" class="rent-links">Honda</a>
+          </div>
+
+          <h3>Rent car by Model</h3>
+          <div>
+            <a href="" class="rent-links">Baleno</a
+            ><a href="" class="rent-links">Swift</a
+            ><a href="" class="rent-links">Swift Dzire</a
+            ><a href="" class="rent-links">Ciaz</a
+            ><a href="" class="rent-links">Elite i20</a
+            ><a href="" class="rent-links">Alto K10</a
+            ><a href="" class="rent-links">Santro MT</a><a href="" class="rent-links">Grand i10</a
+            ><a href="" class="rent-links">XUV</a><a href="" class="rent-links">Celerio</a
+            ><a href="" class="rent-links">Ertiga</a
+            ><a href="" class="rent-links">Ciaz AT</a>
+            <a href="" class="rent-links">Creta</a><a href="" class="rent-links">KUV100</a><a href="" class="rent-links">Eon</a><a href="" class="rent-links">Brezza</a><a href="" class="rent-links">Marazzo</a><a href="" class="rent-links">Santro AT</a><a href="" class="rent-links">Verna AT</a><a href="" class="rent-links">Swift AT</a><a href="" class="rent-links">Grand i10 AT</a><a href="" class="rent-links">Create AT</a><a href="" class="rent-links">Brezza AT</a><a href="" class="rent-links">Baleno AT</a><a href="" class="rent-links">Venue AT</a><a href="" class="rent-links">Xylo</a><a href="" class="rent-links">Swift (p)</a>
+          </div>
+          <h3>Rent car by Body Type</h3>
+          <a href="" class="rent-links">Hatchback</a><a href="" class="rent-links">Sedab</a><a href="" class="rent-links">SUV</a><a href="" class="rent-links">MUV</a>
+        </div>
+      </div>
     </div>
-</body>
-<script src="scripts/cars.js" type="module"></script>
+  </body>
+  <script src="scripts/cars.js" type="module"></script>
 </html>
