@@ -1,8 +1,11 @@
-import { navbar }  from "./components/navbar.js";
+import { navbar,footer }  from "./components/navbar.js";
 //console.log(navbar)
 
 let navbardiv = document.getElementById("container")
 navbardiv.innerHTML = navbar();
+
+let footerdiv = document.getElementById("footer")
+footerdiv.innerHTML = footer();
 
 let data = {
     brand : "Tata",
@@ -223,7 +226,7 @@ two.append(tr5,tr6,tr7,tr8)
 let flag =0;
 document.querySelector("#promobutton").addEventListener("click", function(){
     if(flag==1){
-        alert("Coupan is applied only once")
+        alert(`Coupan is applied only once`)
         alert.color="red"
     }   
     else if(pcode.value == "masai30"){
@@ -265,17 +268,42 @@ else{
 // }
 
 let map = document.getElementsByClassName("selactmap");
-map.keypress =rundata() 
+map.keypress =initMap()
 
-function rundata() {
-    console.log("a")
-    if (add.keypress === "Enter"){
-        // document.getElementById("container").innerHTML =null;
-        let value = map.value;
-        let add = document.getElementsByClassName("gmap_iframe");
-        add.src = `https://maps.google.com/maps?width=600&q=${pune}&amp;height=400&amp;hl=en&amp;q=&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed`           
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 50.064192, lng: -130.605469 },
+          zoom: 3,
+        });
+        const card = document.getElementById("selactmap");
+      
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+      
+        // [START maps_places_autocomplete_creation]
+        const center = { lat: 50.064192, lng: -130.605469 };
+        // Create a bounding box with sides ~10km away from the center point
+        const defaultBounds = {
+          north: center.lat + 0.1,
+          south: center.lat - 0.1,
+          east: center.lng + 0.1,
+          west: center.lng - 0.1,
+        };
+        const input = document.getElementById("selactmap");
+        const options = {
+          bounds: defaultBounds,
+          componentRestrictions: { country: "us" },
+          fields: ["address_components", "geometry", "icon", "name"],
+          strictBounds: false,
+          types: ["establishment"],
+        };
+        const autocomplete = new google.maps.places.Autocomplete(input, options);
+      
+        // [END maps_places_autocomplete_creation]
+        // Set initial restriction to the greater list of countries.
+        // [START maps_places_autocomplete_countries_multiple]
+        autocomplete.setComponentRestrictions({
+          country: ["us", "pr", "vi", "gu", "mp"],
+        });
     }
-};
-
 rundata()
 

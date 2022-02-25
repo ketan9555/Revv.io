@@ -147,15 +147,21 @@
             text-align:right;
             width:100%;
             height:400px;
+            display: none;
         }
         .gmap_canvas {
             overflow:hidden;
             background:none!important;
             width:100%;
             height:400px;
+
         }
         .gmap_iframe {
             height:400px!important;
+        }
+        #selactmap {
+            width: 80%;
+            height: 30px;
         }
   
 
@@ -231,20 +237,22 @@
         <div id="location">
             <img src="" alt="">
         </div>
-        <button id="pay">Pay</button>
+        
         </div>   
         <div id="map">
+            
             <input type="text" id="selactmap" placeholder="select delivery address">
             <div class="mapouter">
                 <div class="gmap_canvas">
                     <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="">   
                     </iframe><a href="https://kokagames.com/">FNF</a></div></div>
         </div>    
+        <button id="pay">Pay</button>
     </div>
   
 </div>
 
-    
+  <div id="footer"></div>  
     
 </body>
 </html>
