@@ -16,16 +16,16 @@ function rentCard(car) {
                     <div class="rent-details d-flex space-between ">
                         
                             <div class="low d-flex col teal  ">
-                                <p class="price nmt-10">${rent.low}</p>
-                                <p class="distance small-txt ">150 kms</p>
+                                <p class="low price nmt-10">${rent.low}</p>
+                                <p class="low distance small-txt ">150 kms</p>
                              </div>
                              <div class="avg d-flex col teal ">
-                                <p class="price nmt-10">${rent.avg}</p>
-                                <p class="distance small-txt ">450 km</p>
+                                <p class="avg price nmt-10">${rent.avg}</p>
+                                <p class="avg distance small-txt ">450 km</p>
                             </div>
                             <div class="Unlimited d-flex col teal ">
-                                <p class="price nmt-10">${rent.Unlimited}</p>
-                                <p class="distance small-txt ">Unlimited </p>
+                                <p class="Unlimited price nmt-10">${rent.Unlimited}</p>
+                                <p class="Unlimited distance small-txt ">Unlimited </p>
                             </div>
                     </div>
                     <div class="extra-km d-flex space-between">

@@ -64,6 +64,7 @@
 .price,.distance{
     margin: 5px;
     /* border: 1px solid; */
+    /* width: min-content; */
 }
 .extra-km{
     background-color: white;
