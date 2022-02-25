@@ -108,39 +108,44 @@ function rentsEventHandler(){
 }
 
 function select(event){
-   
-    let selected = localStorage.getItem('selected');
-    if(selected!= undefined){
-        [...document.querySelectorAll(`.${selected}`)].forEach(el => { el.classList.remove('selected')});
+    console.log('event fired',this.tagName);
+    if(this.tagName == 'DIV'){
+        let selected = localStorage.getItem("selected");
+       
+
+        if (event.target.classList.contains("low")) {
+          //   console.log('low');
+          [...document.querySelectorAll(`.${selected}`)].forEach((el) => {
+            el.classList.remove("selected");
+          });
+          localStorage.setItem("selected", "low");
+
+          [...document.querySelectorAll(".low")].forEach((el) => {
+            el.classList.add("selected");
+          });
+        } else if (event.target.classList.contains("avg")) {
+          //   console.log("avg");
+            [...document.querySelectorAll(`.${selected}`)].forEach((el) => {
+              el.classList.remove("selected");
+            });
+          localStorage.setItem("selected", "avg");
+
+          [...document.querySelectorAll(".avg")].forEach((el) => {
+            el.classList.add("selected");
+          });
+        } else if (event.target.classList.contains("Unlimited")) {
+          //   console.log("Unlimited");
+            [...document.querySelectorAll(`.${selected}`)].forEach((el) => {
+              el.classList.remove("selected");
+            });
+          localStorage.setItem("selected", "Unlimited");
+
+          [...document.querySelectorAll(".Unlimited")].forEach((el) => {
+            el.classList.add("selected");
+          });
+        }
     }
-
-    if(event.target.classList.contains('low')){
-    //   console.log('low');
-
-      localStorage.setItem("selected", "low");
-
-      [...document.querySelectorAll(".low")].forEach((el) => {
-        el.classList.add("selected");
-      });
-    }
-    else if(event.target.classList.contains('avg')){
-    //   console.log("avg");
-        
-        localStorage.setItem("selected", "avg");
-
-        [...document.querySelectorAll(".avg")].forEach((el) => {
-          el.classList.add("selected");
-        });
-    }
-    else if(event.target.classList.contains('Unlimited')){
-    //   console.log("Unlimited");
-        
-        localStorage.setItem("selected", "Unlimited");
-
-        [...document.querySelectorAll(".Unlimited")].forEach((el) => {
-          el.classList.add("selected");
-        });
-    }
+    
 
 }
 

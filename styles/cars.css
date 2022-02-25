@@ -52,10 +52,19 @@
     /* margin: 10px; */
 }
 .rent-details{
-    padding: 10px;
-    margin: -10px ;
+    background-color: #E3E3E3;
+    text-align: center;
+    height: max-content;
+    cursor: default;
 }
-
+.rent-details > div{
+    /* border:1px solid; */
+    flex-grow: 1;
+}
+.price,.distance{
+    margin: 5px;
+    /* border: 1px solid; */
+}
 .extra-km{
     background-color: white;
     padding: 10px;
