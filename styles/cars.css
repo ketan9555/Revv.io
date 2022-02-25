@@ -44,6 +44,7 @@
 }
 .rentCard{
     padding: 0px;
+    border: 1px solid lightgrey
 }
 .car-details{
     background-color: #f1f1f1;
@@ -51,11 +52,17 @@
     box-sizing: border-box;
     /* margin: 10px; */
 }
+.car-details:hover{
+    background-color: white;
+}
 .rent-details{
-    background-color: #E3E3E3;
     text-align: center;
     height: max-content;
     cursor: default;
+}
+.low,.avg,.Unlimited{
+    background-color: #E3E3E3;
+
 }
 .rent-details > div{
     /* border:1px solid; */
@@ -69,7 +76,7 @@
 .extra-km{
     background-color: white;
     padding: 10px;
-    margin: 0px -10px;
+    /* margin: 0px -10px; */
 }
 .book-btn{
     background-color: teal;
@@ -82,8 +89,13 @@
     align-self: center;
     border-radius: 5px;
 }
-
+@keyframes jump {
+    0%{ transform: translate(0px,0px);}
+    50%{transform: translate(0px,-10px);}
+    100%{transform: translate(0px,0px);}
+}
 .selected{
+    animation: jump 1s linear 1;
     background-color: white;
 }
 
