@@ -131,22 +131,23 @@ function select(event) {
     el.classList.remove("selected");
   });
 
-  if (event.target.classList.contains("low")) {
-    console.log("low");
+// this refers to the element which captured the event
+  if (this.classList.contains("low")) {
+    // console.log("low");
 
     localStorage.setItem("selected", "low");
 
     [...document.querySelectorAll(".low")].forEach((el) => {
       el.classList.add("selected");
     });
-  } else if (event.target.classList.contains("avg")) {
+  } else if (this.classList.contains("avg")) {
     // console.log("avg");
     localStorage.setItem("selected", "avg");
 
     [...document.querySelectorAll(".avg")].forEach((el) => {
       el.classList.add("selected");
     });
-  } else if (event.target.classList.contains("Unlimited")) {
+  } else if (this.classList.contains("Unlimited")) {
     // console.log("Unlimited");
     localStorage.setItem("selected", "Unlimited");
 

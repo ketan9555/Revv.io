@@ -1,7 +1,11 @@
+// rendCard function used to render renting details of a car in a card format
+
 function rentCard(car) {
   let { brand, model, imgUrl, seats, transmission, fuel, segment, rent } = car;
 
   let keys = Object.keys(rent);
+
+  
   return `
          <div class="rentCard">
                     <div class="car-details">
@@ -16,16 +20,16 @@ function rentCard(car) {
                     <div class="rent-details d-flex space-between ">
                         
                             <div class="low d-flex col teal  ">
-                                <p class="low price nmt-10">${rent.low}</p>
-                                <p class="low distance small-txt ">150 kms</p>
+                                <p class=" price nmt-10">${rent.low}</p>
+                                <p class=" distance small-txt ">150 kms</p>
                              </div>
                              <div class="avg d-flex col teal ">
-                                <p class="avg price nmt-10">${rent.avg}</p>
-                                <p class="avg distance small-txt ">450 km</p>
+                                <p class="price nmt-10">${rent.avg}</p>
+                                <p class="distance small-txt ">450 km</p>
                             </div>
                             <div class="Unlimited d-flex col teal ">
-                                <p class="Unlimited price nmt-10">${rent.Unlimited}</p>
-                                <p class="Unlimited distance small-txt ">Unlimited </p>
+                                <p class="price nmt-10">${rent.Unlimited}</p>
+                                <p class="distance small-txt ">Unlimited </p>
                             </div>
                     </div>
                     <div class="extra-km d-flex space-between">
