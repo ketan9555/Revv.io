@@ -31,66 +31,6 @@
     right: 0;
 }
 
-#navbar2 {
-background-color: white;
-display: block;
-width: 100%;
-height:60px;
-position: fixed;
-top: 30px;
-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-transition: top 0.0s;
-}
-
-#navbar2 a {
-float: left;
-display: block;
-color: #f2f2f2;
-text-align: center;
-padding: 15px;
-text-decoration: none;
-font-size: 17px;
-}
-
-#navbar2 a:hover {
-background-color: #ddd;
-color: black;
-}
-
-
-#navbar2-box{
-width: 70%;
-height:80%;
-margin: auto;
-margin-top: 5px;
-display:flex;
-}
-
-#navbar2-box > div {
-width:25%;
-height:100%;
-border:0.5px solid grey;
-}
-
-#search-loc{
-width:100%;
-height: 100%;
-font-size: 20px;
-color:white;
-border-radius: 10px;
-border: 1px solid rgb(142,193,213);
-margin-left:-15px;
-background-color:rgb(142,193,213);
-}
-#namshow {
-    font-size: 20px;
-    font-weight: 800;
-    width: 80%;
-    width: max-content;
-    margin-right: 0px;
-    color: rgb(83, 9, 83);
-    margin-left: 10px;
-}
 #loc-logo{
 margin-left: 10px;
 }
@@ -108,9 +48,16 @@ margin-left: 10px;
     margin-top: -20px;
     margin-right: 15px;
     width: 15%;
+    margin-left: 10%;
 }
 #x {
     margin-top: 10px;
+}
+#namshow {
+    color: rgb(83, 7, 83);
+    margin-top: 1%;
+    font-weight: 800;
+    font-size: 25px;
 }
 #x:hover, .hun:hover , #namshow:hover , #FAQ:hover{
     color: #0ebaba;
@@ -138,7 +85,7 @@ margin-left: 10px;
     margin: 15px 8%;
 }
 
-p{
+#did {
     line-height: 10px;
     margin: 20px 15%;
 }
@@ -213,14 +160,7 @@ p{
 #cross {
     margin-right: 0px;
 }
-/* #validmail {
-    position: relative;
-    bottom: 15px;
-    font-size: 12px;
-    line-height: 12px;
-    color: rgb(244, 67, 54);
-    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-} */
+
 .valid {
     position: relative;
     font-size: 13px;
@@ -240,7 +180,7 @@ p{
     height: 100%;
     outline: none;
 }
-hr {
+#hr1 {
     /* color: #0ebaba; */
     color: gray;
     border: 1px thin;
@@ -270,7 +210,7 @@ hr {
     color: blue;
     text-decoration: underline;
 }
-img {
+#img1 {
     width: 200px;
     margin-left: 12%;
 }
@@ -280,139 +220,7 @@ img {
 
 
 
-/* footer */
 
-#footer{
-    background-color: #f1f4f8;
-}
-/* #container2{       
-    margin: auto;
-    width: 80%;
-}
-#container2> div{
-    margin-top: 40px;
-    border-radius: 10px;
-} */
-#div1{ 
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    background-color: white;
-    height:300px;
-    width: 100%;
-    display: flex;
-}
-#div1_1{
-    padding-top: 100px;
-    width: 50%;
-    text-align: center;
-}
-#div1_1 > h2{
-    font-family: "Poppins";
-    color: rgba(152,166,179,.81);
-}  
-#playstores img{
-    height: 70px;
-    width: 150px;
-}
-#playstores{
-    display: flex;
-    justify-content:space-around;
-}
-#div1_2{
-    padding: 50px;
-    background-image: url("http://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/downloadApp/xapp_preview_desk.png.pagespeed.ic.SlqPBPQ6An.png");
-    width: 50%;
-}
-#journey-section > h2{
-    font-family: "Poppins";
-    color: rgba(152,166,179,.81);  
-}
-#stat-container{
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    background-color: white;
-    display: flex;
-    justify-content: space-evenly;
-    border-radius: 10px;
-}
-#stat-container img{
-    height: 80px;
-}
-#stat-container p{
-    margin-top: -14px;
-}
-#investors > h2{
-    font-family: "Poppins";
-    color: rgba(152,166,179,.81); 
-}
-#c-banner{
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    background-color: white;
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    border-radius: 10px;
-}
-#c-banner img{
-    height: 120px;
-}
-#c-banner p{
-    font-weight: bolder;
-}
-#services{
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    background-color: #2a2b36;
-    color: #919197;
-}
-#services h2{
-    margin-left: 30px;
-    color: white;
-}
-#services-city{
-    margin: 0 30px 0 30px;
-    display: flex;
-    justify-content: space-between;
-}
-#services-city p:hover{
-    font-weight: bold;
-    color: whitesmoke;
-}
-#social{
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-evenly;
-}
-#social>div{
-    margin: 20px;
-    width:50%;
-    text-align: justify;
-}
-#social>div:nth-child(1) img{
-    height: 80px;
-}
-#social>div:nth-child(2){
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-}
-#icon{
-    display: flex;
-    justify-content: space-between;
-}
-#download_store>div{
-    width: 80%;
-    border: 1px solid grey;
-    margin-bottom: 10px;
-    text-align: center;
-}
-#about{
-    margin: 10px;
-}
-#about > h2{
-    font-family: "Poppins";
-    color: rgba(152,166,179,.81); 
-}
 
 
 

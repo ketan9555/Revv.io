@@ -245,12 +245,6 @@ else{
 
 // payment //
 
-
-
-// let map = document.getElementsByClassName("selactmap");
-// let add = document.getElementsByClassName("gmap_iframe");
-// add.src = `https://maps.google.com/maps?width=600&q=pune&amp;height=400&amp;hl=en&amp;q=&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed`
-
 }
 
 
@@ -309,64 +303,5 @@ function call(event) {
     }
 }
 
-//otp end
 
-// const  rundata = async (e) => {   
-//     try {
-//         if (e === "Enter"){
-//             // document.getElementById("container").innerHTML =null;
-//             let value = map.value;
-//             let add = document.getElementsByClassName("gmap_iframe");
-//             add.src = `https://maps.google.com/maps?width=600&q=${pune}&amp;height=400&amp;hl=en&amp;q=&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed`           
-//         }
-//     }
-//     catch (err) {
-//         // alert("please enter correct item")
-//         // let errr = document.createElement("img")
-//         // errr.src = "https://c.tenor.com/oGqmSDzGn3gAAAAC/busubusu8-cute.gif";
-//         // errr.style = "margin:0 300px;width:700px"
-//         // parent.append(errr)      
-//         console.log(err)  
-//     }
-// }
-
-// let map = document.getElementsByClassName("selactmap");
-// map.keypress =initMap()
-
-//     function initMap() {
-//         const map = new google.maps.Map(document.getElementById("map"), {
-//           center: { lat: 50.064192, lng: -130.605469 },
-//           zoom: 3,
-//         });
-//         const card = document.getElementById("selactmap");
-      
-//         map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-      
-//         // [START maps_places_autocomplete_creation]
-//         const center = { lat: 50.064192, lng: -130.605469 };
-//         // Create a bounding box with sides ~10km away from the center point
-//         const defaultBounds = {
-//           north: center.lat + 0.1,
-//           south: center.lat - 0.1,
-//           east: center.lng + 0.1,
-//           west: center.lng - 0.1,
-//         };
-//         const input = document.getElementById("selactmap");
-//         const options = {
-//           bounds: defaultBounds,
-//           componentRestrictions: { country: "us" },
-//           fields: ["address_components", "geometry", "icon", "name"],
-//           strictBounds: false,
-//           types: ["establishment"],
-//         };
-//         const autocomplete = new google.maps.places.Autocomplete(input, options);
-      
-//         // [END maps_places_autocomplete_creation]
-//         // Set initial restriction to the greater list of countries.
-//         // [START maps_places_autocomplete_countries_multiple]
-//         autocomplete.setComponentRestrictions({
-//           country: ["us", "pr", "vi", "gu", "mp"],
-//         });
-//     }
-// rundata()
 
