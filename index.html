@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css">
+
+</head>
+<body>
+    <div id="navbar">
+        <div id="navleft">
+            <img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" />
+            <h5 style="margin-top: -7px;margin-left:20px ;">Sanitized. Safe</h5>
+        </div>
+        <div id="navright">
+            <div>
+                <h5 style="margin-top: 8px;margin-left:10px;">Hyundai Subcription</h5>
+            </div>
+            <div style="margin-left:105px;">
+                <h5 style="margin-top: 8px;margin-left:10px;">Mahindra Subcription</h5>
+            </div>
+            <div style="border:none">
+                <h4 style="margin-top: 7px;margin-left:60px;">FAQs</h4>
+            </div>
+            <div style="border:none">
+                <img width="30px" src="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg" />
+
+                <h4 style="margin-top:7px ;margin-left: 10px;font-family:Sans-serif	;">Login or Signup</h4>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="navbar2">
+        <div id="navbar2-box">
+            <div id="page" class="popup1_open">
+                <main>
+                    <div style=" border-top-left-radius: 10px;border-bottom-left-radius: 10px;display: flex ;">
+                        <img width="15px" id="loc-logo"
+                            src="https://www.revv.co.in/assets/RentalImages/HomeScreen/locationRental.svg" />
+                        <div id="input-loc"></div>
+                    </div>
+                </main>
+            </div>
+            <div class="input-container">
+                <input id="effective-date" type="date" minlength="1" maxlength="64" placeholder=" " autocomplete="nope"
+                    required="required"></input>
+            </div>
+            <div class="input-container">
+                <input id="effective-date" type="date" minlength="1" maxlength="64" placeholder=" " autocomplete="nope"
+                    required="required"></input>
+            </div>
+
+
+
+
+            <div style="border: none;">
+                <button id="search-loc" onclick="searchfn()">Search</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <section id="popup1">
+        <br>
+        <h4>SELECT CITY</h4>
+        <br>
+        <hr>
+        <br>
+        <div id="side-scroll">
+            <h4>Top city</h4>
+            <br>
+
+            <div class="city-box">
+                <p>Banglore</p>
+                <br>
+
+                <p>Hydrabad</p>
+                <br>
+
+                <p>Mumbai</p>
+                <br>
+
+                <p>Delhi-NCR</p>
+                <br>
+
+                <p>Chennai</p>
+                <br>
+
+                <p>Pune</p>
+                <br>
+
+            </div>
+            <hr>
+            <br>
+            <h5>Other city</h5>
+            <br>
+
+            <div class="city-box2">
+                <p>Kolkata</p>
+                <br>
+
+                <p>Ahmedabad</p> <br>
+
+                <p>Bhubaneswar</p> <br>
+
+                <p>Chandigarh</p> <br>
+
+                <p>Coimbatore</p> <br>
+
+                <p>Jaipur</p> <br>
+
+
+                <p>Kochi</p> <br>
+
+                <p>Manglore</p> <br>
+
+                <p>Mysore</p> <br>
+
+                <p>Nagpur</p> <br>
+
+                <p>Surat</p> <br>
+
+                <p>Tirupati</p> <br>
+
+                <p>Vadodara</p> <br>
+
+                <p>Vijayawada</p> <br>
+
+                <p>Vijag</p>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <div id="senetized-container">
+        <div id="final-senetized">
+            <div id="sennetized-search">
+                <div id="senetized-search-box">
+                    <div id="senetized-search-box-top">
+                        <div class="box arrow-bottom" style="text-align: center;font-family:Sans-serif">
+                            <h2 style="margin-top:-4px;  font-weight: bold;">Rentals</h2>
+                            <p>For hours & days</p>
+                        </div>
+
+
+                        <div style="width:60%;height:100%;color: white;">
+                            <h2 style="text-align: center;font-family:Sans-serif;margin-top: 30px;">Subcriptions</h2>
+                            <p style="text-align: center;font-family:Sans-serif">For month & year</p>
+                        </div>
+
+                    </div>
+                    <div id="rental">
+                        <img src="https://www.revv.co.in/imgs/logo-rentals.svg" width="100%" height="100%" alt="" />
+
+                    </div>
+                    <div style="width:250px;height:30px;margin: auto;">
+                        <p style="font-size: 25px;color:grey">Car Rental in Bangalore</p>
+                    </div>
+
+                    <div id="search-loc-2-with-date">
+                        <div style="width:100%;height:50%;border:1px solid grey; border-top-left-radius: 10px;border-top-right-radius: 10px;"
+                            class="popup1_open">
+                            <main>
+                                <div
+                                    style=" border-top-left-radius: 10px;border-bottom-left-radius: 10px;display: flex ;">
+                                    <img width="20px" style="margin-top:25px" id="loc-logo"
+                                        src="https://www.revv.co.in/assets/RentalImages/HomeScreen/locationRental.svg" />
+                                    <div style="margin-left:20px;margin-top:25px;font-size: 20px;" id="input-loc2">
+                                    </div>
+                                </div>
+                            </main>
+
+                        </div>
+
+
+                        <div
+                            style="width:100%;height:50%;border:1px solid grey;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;display:flex;">
+                            <div style="width:50%;height:100%;border:0px solid grey;">
+                                <input id="effective-date" style="margin-top:28px;margin-left:30px;" type="date"
+                                    minlength="1" maxlength="64" placeholder=" " autocomplete="nope"
+                                    required="required"></input>
+                            </div>
+                            <div
+                                style="width:50%;height:100%;border:1px solid grey;border-bottom-right-radius: 10px;border-top: none;">
+                                <input id="effective-date" style="margin-top:28px;margin-left:30px;" type="date"
+                                    minlength="1" maxlength="64" placeholder=" " autocomplete="nope"
+                                    required="required"></input>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+
+                    <div style="width:400px;height:70px;margin:auto">
+                        <button id="search-loc2" onclick="searchfn()">Search</button>
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="senetized-image">
+                <div id="customer-section">
+                    <!-- slider start -->
+                    <div class="slider">
+                        <div class="slides">
+                            <!-- radio button start -->
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                            <input type="radio" name="radio-btn" id="radio3">
+
+                            <!-- slide images start -->
+                            <div class="slide first">
+                                <img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/heroCarousel/ST_Desktop_1_FG.webp"
+                                    alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/heroCarousel/ST_Desktop_2_FG.webp"
+                                    alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/heroCarousel/ST_Desktop_1_FG.webp"
+                                    alt="">
+                            </div>
+
+                            <!-- slide images end -->
+                        </div>
+                        <!-- manual nav start -->
+                        <div class="navigation-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+
+                        </div>
+                        <!-- manual nav end -->
+                    </div>
+                    <!-- slider end -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+
+    <!-- Slide div container ----------------------------------------------------------------------------------->
+    <div style="display: flex;justify-content: space-between;width: 80%;margin: auto;margin-top: 30px;">
+        <h1 style="font-family:sans-serif;color:grey;margin-left: 25px;">Feature</h1>
+        <div style="margin-top: 45px;"><span class="span1">&#139;</span>
+            <span class="span1">&#155;</span>
+        </div>
+    </div>
+    <div id="feature-box">
+        <div class="st">
+            <img src="https://revvselfdrivecar.s3.us-west-2.amazonaws.com/5+days.png" width="100%" height="100%"
+                style="border-radius:10px;" />
+
+        </div>
+        <div class="st">
+            <img src="https://revvselfdrivecar.s3.us-west-2.amazonaws.com/10+days.png" width="100%" height="100%"
+                style="border-radius:10px;" />
+
+        </div>
+
+                <div class="st">
+            <img src="https://revvselfdrivecar.s3.us-west-2.amazonaws.com/15+days.png" width="100%" height="100%"
+                style="border-radius:10px;" />
+
+        </div>
+        <div class="st">
+            <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/subscriptions_banners_01-min.jpg"
+                width="100%" height="100%" style="border-radius:10px;" />
+
+        </div>
+        <div class="st">
+            <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/subscriptions_banners_02-min.jpg"
+                width="100%" height="100%" style="border-radius:10px;" />
+
+        </div>
+        <div class="st">
+            <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/subscriptions_banners_03-min.jpg"
+                width="100%" height="100%" style="border-radius:10px;" />
+
+        </div>
+        <div class="st">
+            <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/subscriptions_banners_04-min.jpg"
+                width="100%" height="100%" style="border-radius:10px;" />
+
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+
+<!--------------------------------------------------------sanitized & safe cars-->
+
+
+
+    <h1 style="margin-left: 170px;margin-bottom:-50px ;color:white;color: grey;font-family: sans-serif;">Sanitized & safe cars </h1>
+    <div style="margin-top: 45px;"><span class="span2">&#139;</span>
+        <span class="span2">&#155;</span>
+    
+<div id="sanitized-safe-box">
+
+    <div class="st2">
+        <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/thumbnails/Group+84.png" width="100%" height="100%"
+            style="border-radius:10px;" />
+
+    </div>
+    <div class="st2">
+        <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/banner_sanitised_01-min.jpg" width="100%" height="100%"
+            style="border-radius:10px;" />
+
+    </div>
+
+            <div class="st2">
+        <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/banner_sanitised_02-min.jpg" width="100%" height="100%"
+            style="border-radius:10px;" />
+
+    </div>
+    <div class="st2">
+        <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/banner_sanitised_03-min.jpg"
+            width="100%" height="100%" style="border-radius:10px;" />
+
+    </div>
+    <div class="st2">
+        <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/banner_sanitised_04-min.jpg"
+            width="100%" height="100%" style="border-radius:10px;" />
+
+    </div>
+    <div class="st2">
+        <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/thumbnails/Group+84.png"
+            width="100%" height="100%" style="border-radius:10px;" />
+
+    </div>
+    <div class="st2">
+        <img src="https://revvselfdrivecar.s3-us-west-2.amazonaws.com/staging_images/banner_sanitised_01-min.jpg"
+            width="100%" height="100%" style="border-radius:10px;" />
+
+    </div>
+
+
+</div>
+<br>
+<br>
+<br>
+
+<!------------------------------------------------why revv----------------------------------------------------------------->
+
+
+
+<h1 style="margin-left: 170px;margin-bottom:-50px ;color:white;color: grey;font-family: sans-serif;">Why Revv?</h1>
+    <div style="margin-top: 45px;"><span class="span3">&#139;</span>
+        <span class="span3">&#155;</span>
+    
+<div id="why-revv">
+
+    <div class="st3" style="display: flex;">
+       <div style="margin-top: 20px;margin-left: 30px;"> <img width="60px" src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/whyRevv/home.png"/></div>
+       <div style="width:70%;height:80px;margin-top: 20px;margin-left: 25px;"><h4 style="text-align: left;color: black;font-family: sans-serif;">Home delivery & return</h4>
+         <p style="text-align: left;color: grey;margin-top:7px;font-family: sans-serif;font-size: 15px;">On time doorstep service, at your preferred location ant time  </p></div>
+
+    </div>
+    <div class="st3" style="display: flex;">
+        <div style="margin-top: 20px;margin-left: 30px;"> <img width="60px" src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/whyRevv/price.png"/></div>
+        <div style="width:70%;height:80px;margin-top: 20px;margin-left: 25px;"><h4 style="text-align: left;color: black;font-family: sans-serif;">Flexible pricing plans</h4>
+          <p style="text-align: left;color: grey;margin-top:7px;font-family: sans-serif;font-size: 15px;">Choose 'Unlimited kms' or 'fuel' plans  </p></div>
+ 
+     </div>
+
+     <div class="st3" style="display: flex;">
+        <div style="margin-top: 20px;margin-left: 30px;"> <img width="60px" src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/whyRevv/maintained.png"/></div>
+        <div style="width:70%;height:80px;margin-top: 20px;margin-left: 25px;"><h4 style="text-align: left;color: black;font-family: sans-serif;">Well maintained Cars</h4>
+          <p style="text-align: left;color: grey;margin-top:7px;font-family: sans-serif;font-size: 15px;">Regular services and maintance; Inspected before each trip</p></div>
+ 
+     </div>
+     <div class="st3" style="display: flex;">
+        <div style="margin-top: 20px;margin-left: 30px;"> <img width="60px" src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/whyRevv/contact.png"/></div>
+        <div style="width:70%;height:80px;margin-top: 20px;margin-left: 25px;"><h4 style="text-align: left;color: black;font-family: sans-serif;">Home delivery & return</h4>
+          <p style="text-align: left;color: grey;margin-top:7px;font-family: sans-serif;font-size: 15px;">On time doorstep service, at your preferred location ant time  </p></div>
+ 
+     </div>
+     <div class="st3" style="display: flex;">
+        <div style="margin-top: 20px;margin-left: 30px;"> <img width="60px" src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/whyRevv/maintained.png"/></div>
+        <div style="width:70%;height:80px;margin-top: 20px;margin-left: 25px;"><h4 style="text-align: left;color: black;font-family: sans-serif;">Well maintained Cars</h4>
+          <p style="text-align: left;color: grey;margin-top:7px;font-family: sans-serif;font-size: 15px;">Regular services and maintance; Inspected before each trip</p></div>
+ 
+     </div>
+     <div class="st3" style="display: flex;">
+        <div style="margin-top: 20px;margin-left: 30px;"> <img width="60px" src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/whyRevv/price.png"/></div>
+        <div style="width:70%;height:80px;margin-top: 20px;margin-left: 25px;"><h4 style="text-align: left;color: black;font-family: sans-serif;">Flexible pricing plans</h4>
+          <p style="text-align: left;color: grey;margin-top:7px;font-family: sans-serif;font-size: 15px;">Choose 'Unlimited kms' or 'fuel' plans  </p></div>
+ 
+     </div>
+</div>
+
+<!---------------------------------------------------------FAQs------------->
+<div id="FAQs-div">
+    <div><h1 style="color:gray;font-family:sans-serif;">FAQS</h1></div>
+    <div><H3 style="color:rgb(144,176,165);text-decoration: underline;font-family:sans-serif;">View all</H3></div>
+</div>
+
+<br>
+<br>
+<div id="FAQS-content-box">
+
+<div>
+    <h3 style="font-family:sans-serif;margin-top:20px;margin-left:30px;">Is there a speed limit?</h3>
+    <p style="font-family:sans-serif;margin-top:10px;margin-left:30px;color:grey">Revv allows up to 125 km/hr. However it is 80 km/hr in a few cities where some cars might be equipped with speed governors as per government directives. Revv strictly advises to follow local speed limits.</p>
+</div>
+<div>
+    <h3 style="font-family:sans-serif;margin-top:20px;margin-left:30px;">Can I extend/ cancel/ modify? </h3>
+    <p style="font-family:sans-serif;margin-top:10px;margin-left:30px;color:grey">Yes, extensions are possible subject to availability & charges. Cancellations & modifications will attract nominal charges as per our policy.</p>
+</div>
+<div>
+    <h3 style="font-family:sans-serif;margin-top:20px;margin-left:30px;">Booking criteria & documents?</h3>
+    <p style="font-family:sans-serif;margin-top:10px;margin-left:30px;color:grey">Min. 21 years old, have valid original government ID (Aadhar, Passport, or PAN only) and a valid driving licence for “Light Motor Vehicles”, which is min. 1 year old at the time of starting the trip.</p>
+</div>
+<div style="border: none;">
+    <h3 style="font-family:sans-serif;margin-top:20px;margin-left:30px;">Are there any restricted areas?</h3>
+    <p style="font-family:sans-serif;margin-top:10px;margin-left:30px;color:grey">Leh/Ladhakh, Spiti Valley & Kaza/Nako regions are not permitted to take Revv cars. Customer will be fully liable for any damages incurred to the car in that region.</p>
+</div>
+
+
+</div>
+
+
+<br>
+<br>
+<!----------------------------------------------Happy customers------------------------------------------------>
+
+
+
+
+    <div style="display: flex;justify-content: space-between;width: 80%;margin: auto;margin-top: 30px;">
+        <h1 style="font-family:sans-serif;color:grey;margin-left: 25px;">Happy customers </h1>
+        <div style="margin-top: 45px;"><span class="span4">&#139;</span>
+            <span class="span4">&#155;</span>
+        </div>
+    </div>
+    <div id="happy-customer">
+
+        <div class="st4" >
+           <h5 style="color:black;margin-top: 20px;margin-left:15px;">Prateek Srivastava</h5>
+           <hr>
+<p style="color: grey;font-size: 15px;font-style: normal;font-family:sans-serif;margin-top: 20px;margin-left:15px;">Nice service with on time pickup and delivery. Good customer support with friendly and very helpful staff. The car was also very smooth and the packages are pocket friendly. Overall an amazing experience. Would highly recommend</p>
+        </div>
+        <div class="st4" >
+            <h5 style="color:black;margin-top: 20px;margin-left:15px;">Roshan Raval</h5>
+            <hr>
+ <p style="color: grey;font-size: 15px;font-style: normal;font-family:sans-serif;margin-top: 20px;margin-left:15px;">The car delivery was done on time and we were satisfied with the entire booking entire experience. We also got instant refund and the overall service was Revv</p>  </div>
+
+         <div class="st4" >
+            <h5 style="color:black;margin-top: 20px;margin-left:15px;">Sanjib Sarkar</h5>
+            <hr>
+ <p style="color: grey;font-size: 15px;font-style: normal;font-family:sans-serif;margin-top: 20px;margin-left:15px;">Very good service. I could not expect that I can get a car at 4.30 in the morning. Even they have paid for fuel which I filled more. Very transparent</p>
+         </div>
+         <div class="st4" >
+            <h5 style="color:black;margin-top: 20px;margin-left:15px;">Arijit Sarkar</h5>
+            <hr>
+ <p style="color: grey;font-size: 15px;font-style: normal;font-family:sans-serif;margin-top: 20px;margin-left:15px;">Sanitized car was provided. The delivery and pickup boy was very polite and helpful. This company is honest with their customers</p>
+         </div>
+         <div class="st4" >
+            <h5 style="color:black;margin-top: 20px;margin-left:15px;">Vijay S</h5>
+            <hr>
+ <p style="color: grey;font-size: 15px;font-style: normal;font-family:sans-serif;margin-top: 20px;margin-left:15px;">Booked for 4 days for a family trip. Car was water washed and sanitized when I recieved it. Trip and the process were very comfortable and hassle-free. Best self-drive car service provider. I strongly recommend Rev. Looking forward to using Revy car again</p>
+         </div>
+         <div class="st4" >
+            <h5 style="color:black;margin-top: 20px;margin-left:15px;">Rohit Roy</h5>
+            <hr>
+ <p style="color: grey;font-size: 15px;font-style: normal;font-family:sans-serif;margin-top: 20px;margin-left:15px;">The app is as user friendly as the policies. The process is as easy as nursury rhyme. Nicely maintaied cars</p>
+         </div>
+         <div class="st4" >
+            <h5 style="color:black;margin-top: 20px;margin-left:15px;">Sanjeev Rawat</h5>
+            <hr>
+ <p style="color: grey;font-size: 15px;font-style: normal;font-family:sans-serif;margin-top: 20px;margin-left:15px;">Booked one during new year time, for an outstation trip. Were really happy with the clean, sanitized, mileage friendly, and well maintained car. All papers were intact which saved us from any hassles from traffic or border-post related checks</p>
+         </div>
+
+
+
+</div>
+
+
+
+<!----------------------------------------footer---------------->
+
+<div id="play-store-box">
+<div >
+<h1 style="text-align: center;margin-top: 150px;color: gray;font-family: sans-serif;">Download the Revv app</h1>
+<div id="app-link">
+    <div >
+        <a href="https://apps.apple.com/in/app/revv-self-drive-cars-delivered/id1021594400">
+ 
+        <img width="100%" height="100%"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/downloadApp/app_store.webp"/></a></div>
+<div >
+    <a href="https://play.google.com/store/apps/details?id=com.selfdrive&hl=en">
+    <img width="100%" height="100%"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/downloadApp/google_play.webp"/></a></div>
+
+</div>
+</div>
+<div ><img width="90%" style="margin-top: 36px;margin-left: 10px;"height="90%"src="http://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/downloadApp/xapp_preview_desk.png.pagespeed.ic.SlqPBPQ6An.png"/></div>
+
+
+</div>
+
+
+<!------------------------------------------------------------------------------------------------>
+
+<h1 style="margin-top: 60px;margin-left:150px;font-family: sans-serif;color:gray">Our journey so far</h1>
+
+<div class="our-journey">
+<div style="margin:auto;width:110px;height:150px">
+    <img width="70px" style="margin-left:10px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/ourJourney/revvers.png"/>
+    <h1 style="font-family: sans-serif;">1 Mn +</h1>
+    <h5 style="font-family: sans-serif;color:gray;margin-top: 5px;">Happy Revvers</h5>
+</div>
+<div style="margin:auto;width:150px;height:150px">
+    <img width="70px" style="margin-left:40px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/ourJourney/cities.png"/>
+    <h1 style="font-family: sans-serif;">22+ cities</h1>
+    <h5 style="font-family: sans-serif;color:gray;margin-top: 5px;text-align: center;">Across India</h5>
+</div>
+<div style="margin:auto;width:130px;height:150px">
+    <img width="70px" style="margin-left:30px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/ourJourney/travel.png"/>
+    <h1 style="font-family: sans-serif;text-align: center;">50 Mn +</h1>
+    <h5 style="font-family: sans-serif;color:gray;margin-top: 5px;text-align: center;">Kms travelle</h5>
+</div>
+<div style="margin:auto;width:110px;height:150px">
+    <img width="70px" style="margin-left:10px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/ourJourney/review.png"/>
+    <h1 style="font-family: sans-serif;">4.8 / 5</h1>
+    <h5 style="font-family: sans-serif;color:gray;margin-top: 5px;text-align: center;">20K+ reviewers</h5>
+</div>
+
+
+</div>
+<br>
+<br>
+<!------------------------------------------------------------------------------------------------------------------->
+<h1 style="margin-top: 60px;margin-left:150px;font-family: sans-serif;color:gray">Our investors</h1>
+
+<div class="our-journey">
+    <div style="margin:auto;width:180px;height:150px">
+        <img width="130px" style="margin-left:10px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/investors/hyundai.webp"/>
+        
+        <h5 style="font-family: sans-serif;color:gray;margin-top: 5px;">Hyundai Motor Company</h5>
+    </div>
+    <div style="margin:auto;width:200px;height:150px">
+        <img width="130px" style="margin-left:40px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/investors/edelweissFinancialServices.webp"/>
+    
+        <h5 style="font-family: sans-serif;color:gray;margin-top: 5px;text-align: center;">Edelweiss Financial Services</h5>
+    </div>
+    <div style="margin:auto;width:180px;height:150px">
+        <img width="130px" style="margin-left:20px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/investors/dreamIncubator.webp"/>
+        
+        <h5 style="font-family: sans-serif;color:gray;margin-top: 5px;text-align: center;">Dream Incubator </h5>
+    </div>
+    <div style="margin:auto;width:110px;height:150px">
+        <img width="130px" style="margin-left:0px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/investors/beenext.webp"/>
+    
+        <h5 style="font-family: sans-serif;color:gray;margin-top: 5px;text-align: center;">Beenext</h5>
+    </div>
+    
+    
+    </div>
+
+
+<br>
+<br>
+<br>
+<div id="Serviceable-cities">
+
+<div>
+    <br>
+ 
+<h1 style="color:white;margin-left:50px">Serviceable cities</h1>
+
+<br>
+
+<p style="color:grey;margin-left:50px">Car Rental in Bangalore</p>
+<br>
+<p style="color:grey;margin-left:50px">Car Rental in Hydrabad</p>
+<br>
+
+<p style="color:grey;margin-left:50px">Car Rental in Mumbai</p>
+<br>
+
+<p style="color:grey;margin-left:50px">Car Rental in Delhi-NCR</p>
+<br>
+
+<p style="color:grey;margin-left:50px">Car Rental in Chennai</p>
+<br>
+
+<p style="color:grey;margin-left:50px">Car Rental in Pune</p>
+<br>
+
+<p style="color:grey;margin-left:50px">Car Rental in Kolkata</p>
+<br>
+
+<p style="color:grey;margin-left:50px">Car Rental in Ahmedabad</p>
+
+</div>
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Bhubaneswar</p>
+    <br>
+    <p style="color:grey;margin-left:50px">Car Rental in Chandigarh</p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Coimbatore</p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Jaipur</p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Kochi</p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Mangalore</p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Mysore </p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Nagpur</p>
+    
+
+</div>
+<div>
+    <br>
+ 
+    <br>
+
+    <br>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Surat </p>
+    <br>
+    <p style="color:grey;margin-left:50px">Car Rental in Tirupati</p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Trivandrum </p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Vadodara</p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Vijayawada</p>
+    <br>
+    
+    <p style="color:grey;margin-left:50px">Car Rental in Vizag</p>
+    <br>
+   
+    
+</div>
+</div>
+<br>
+
+<br>
+<br>
+<!-----------------------------social media-------------------------------------------------------------------------->
+<div id="social-media">
+<div>
+<div style="width:85%;height:130px;border:1px solid white;margin-top: 70px;margin-left:50px;">
+<img width="100px"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/logo/revv-logo.png"/>
+<h5 style="color: gray;font-family: sans-serif;margin-top: 10px;">© 2022 Primemover Mobility Technologies Pvt Ltd. All rights reserved</h5>
+</div>
+
+
+</div>
+<div>
+<div style="width:100px;height:250px;border:1px solid white;margin:auto;margin-top:70px;text-align: center;font-family: sans-serif;color:grey">
+    <h4>Home</h4>
+    <br>
+    <h4>Traffis</h4>
+    <br>
+    <h4>FAQs</h4>
+    <br>
+    <h4>Policy</h4>
+    <br>
+    <h4>Blog</h4>
+
+</div>
+</div>
+<div>
+
+<div style="width:70%;height:70%;border:1px solid white;margin:auto;margin-top:70px;font-family: sans-serif;color:grey;cursor:pointer;">
+<h3>Social</h3>
+<div id="social-link">
+    <div>
+        <img width="25px"height="40px"style="margin-left:13px" style="border-radius: 50px;margin-top: 10px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/social/facebook.png"/>
+    </div>
+    <div>
+        <img width="25px"height="40px"style="margin-left:13px" style="border-radius: 50px;margin-top: 15px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/social/twitter.png"/>
+
+    </div>
+    <div>
+        <img width="25px"height="40px"style="margin-left:13px" style="border-radius: 50px;margin-top: 15px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/social/instagram.png"/>
+
+    </div>
+    <div>
+        <img width="25px"height="40px"style="margin-left:13px" style="border-radius: 50px;margin-top: 15px;"src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/social/youtube.png"/>
+
+    </div>
+</div>
+<br>
+<br>
+
+<h4>Download the Revv App!</h4>
+<br>
+<div style="width:250px;height:60px;cursor:pointer;border:1px solid white;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;display: flex;justify-content: space-evenly;">
+    <img width="30px"height="30px"style="margin-top:15px" src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/logo/appstore_apple.webp"/>
+    <h3 style="margin-top: 20px;color: grey;">Download</h3>
+    <h3 style="margin-top: 20px;color:black">App store</h3>
+
+</div>
+<br>
+<div style="width:250px;height:60px;cursor:pointer;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;border:1px solid white;display: flex;justify-content: space-evenly;">
+    <img width="30px"height="30px"style="margin-top:15px" src="https://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/logo/playstore_google.webp"/>
+    <h3 style="margin-top: 20px;color: grey;">Download</h3>
+    <h3 style="margin-top: 20px;color:black">Google Play</h3>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!---------------------------------------------------about-->
+<div id="about">
+    <h2 style="color: gray;">Safe, Sanitized Car Subscription You Can Count On</h2>
+    <br>
+    <p>Car subscription from Revv provides the flexibility of having a car anytime you want, as well as the assurance of a sanitized and virus free vehicle for your own self drive. The car sanitization process encompasses all the preventive hygiene best practices directed by the World Health Organization (WHO) and is diligently conducted for each vehicle delivered to the car subscribers. The safety measures that are implemented consist of:</p>
+    <br>
+    <ul>
+        <li>Industrial standards sanitization and disinfection before delivery for all surfaces of the vehicle</li>
+        <br>
+
+        <li>Drivers wear Personal Protective Equipment (PPE) including masks and gloves while delivering the cars</li>
+        <br>
+
+        <li>Paperless agreements for minimum contact</li>
+        <br>
+
+        <li>Upon return, digital receipt sent to the customer’s e-mail.</li>
+    </ul>
+    <br>
+    <br>
+
+    <h2 style="color: gray;">Self-Drive Car Rentals</h2>
+    <br>
+
+    <p>Whether you’re planning a road trip outside the city or looking for a convenient way to cruise around when you’re out of town, Revv is here to ease your travel woes. You can pick one of Revv’s convenient car rental options to drive down to the nearby beach or to manoeuvre through traffic as you head from one important business meeting to the next. With a self-drive car rental from Revv, you have the freedom to move around and explore places at your own pace.</p>
+    <br>
+    <br>
+
+    <h2 style="color: gray;">Affordable, Convenient & Safe</h2>
+    <br>
+
+    <p>With Revv, you can rent a car at a time that is convenient to you and get it delivered right to your doorstep. Apart from an hourly rate starting at just Rs. 33/hour, Revv also offers flexible car rental services. You can choose monthly car rental packages, unlimited kilometre packages, or even get a brand new car from Revv by simply paying the first year’s insurance. Additionally, all cars in our fleet have insurance, so you’ll be safe and secure while cruising down open roads.</p>
+    <br>
+    <br>
+
+    <h4 style="color: gray;">Why Rev</h4>
+    <br>
+
+    <p>When you choose a car <b>subscription</b> with Revv, you can enjoy:</p>
+    <br>
+
+    <ul>
+        <li>Flexible Rentals – You decide whether you’d like to rent a car for an hour, a week, a month, or on a daily basis.</li>
+        <br>
+
+        <li>Several Options – Pick from our wide range of classy hatchbacks, comfortable sedans and spacious SUVs.</li>
+        <br>
+
+       
+        <li>All-India Permits – Revv cars come with an All India Tourist Permit, so you can drive from Kashmir to Kanyakumari without any worries.</li>
+        <br>
+
+        <li>Unending Opportunities – The cars you rent from Revv can be used for trips out of the city or for daily travels through town. Revv also provides cars for pick up and drop off services at airports and bus and train stations.</li>
+    </ul>
+    <br>
+    <br>
+
+    <h2 style="color: gray;">Pick Your Favourite Car</h2>
+    <br>
+
+    <p>Revv has an amazing fleet of rental cars ranging from compact hatchbacks to roomy sedans and powerful SUVs. You can choose to hire a Hyundai Grand i10, Hyundai Creta, Honda City, Maruti Suzuki Brezza, Ford EcoSport, Mahindra Scorpio, Toyota Innova Crysta, Mahindra XUV and many other car models that suit your requirement.</p>
+    <br>
+    <br>
+
+    <h2 style="color: gray;">Extensive Network</h2>
+    <br>
+
+    <p>Currently, you can rent a self-driving car from Revv in Ahmedabad, Bengaluru, Chandigarh, Chennai, Coimbatore, Delhi NCR, Hyderabad, Jaipur, Kochi, Kolkata, Mangalore, Mumbai, Mysuru, Pune, Surat, Trivandrum, Tirupati, Vijayawada, Vizag, Bhubaneswar, Nagpur & Vadodara.</p>
+    <br>
+    <br>
+
+    <h2 >Rent a Car</h2>
+    <br>
+
+    <p>To rent one of our sanitized cars, you can follow these simple steps:</p>
+    <br>
+
+    <ul>
+        
+        <li>Download the Revv app from the <a href="https://apps.apple.com/in/app/revv-self-drive-cars-delivered/id1021594400">Apple App Store</a>  or <a href="https://play.google.com/store/apps/details?id=com.selfdrive&hl=en">Google Play Store</a></li>
+        <br>
+
+        <li>Pick your favourite car and let us know when and where you need it.</li>
+        <br>
+
+        <li>The car will be delivered to your doorstep at the date and time promised.</li>
+        <br>
+
+        <li>Start the engine and enjoy your road trip without worrying about the kilometres.</li>
+        <br>
+
+        <li>Let us know where we need to pick up the car from once you’re done.</li>
+        <br>
+
+        <li>You’ll receive an invoice in your email 48 hours after your trip is completed.</li>
+        <br>
+
+        <li>Use the app to reschedule or cancel bookings as required.</li>
+    </ul>
+    <br>
+
+    <p>With Revv, exploring and travelling has become easy, convenient and completely hassle-free unlike in cabs & taxis!</p>
+</div>
+
+<br>
+<br>
+<br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
+
+
+</body>
+</html>
+<script src="./scripts/index.js"></script>
