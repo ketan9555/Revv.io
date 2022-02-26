@@ -112,7 +112,7 @@ margin-left: 10px;
 #x {
     margin-top: 10px;
 }
-#x:hover, .hun:hover , #namshow:hover {
+#x:hover, .hun:hover , #namshow:hover , #FAQ:hover{
     color: #0ebaba;
 }
 #navmid {
@@ -122,7 +122,7 @@ margin-left: 10px;
 }
 
 .hun {
-    width:23%;
+    width:25%;
     height: 50%;
     border:.5px solid grey;
     border-radius: 5px;
@@ -260,7 +260,7 @@ hr {
     height: 35px;
     width: 120px;
 }
-#inputbtn:hover,#outbtn:hover  {
+#inputbtn:hover,#outbtn:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 #gotosignup {
@@ -277,3 +277,222 @@ img {
 .fb {
     margin-bottom: 20px;
 }
+
+
+
+/* footer */
+
+#footer{
+    background-color: #f1f4f8;
+}
+/* #container2{       
+    margin: auto;
+    width: 80%;
+}
+#container2> div{
+    margin-top: 40px;
+    border-radius: 10px;
+} */
+#div1{ 
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: white;
+    height:300px;
+    width: 100%;
+    display: flex;
+}
+#div1_1{
+    padding-top: 100px;
+    width: 50%;
+    text-align: center;
+}
+#div1_1 > h2{
+    font-family: "Poppins";
+    color: rgba(152,166,179,.81);
+}  
+#playstores img{
+    height: 70px;
+    width: 150px;
+}
+#playstores{
+    display: flex;
+    justify-content:space-around;
+}
+#div1_2{
+    padding: 50px;
+    background-image: url("http://www.revv.co.in/assets/RentalImages/HomeScreen/rental2021/downloadApp/xapp_preview_desk.png.pagespeed.ic.SlqPBPQ6An.png");
+    width: 50%;
+}
+#journey-section > h2{
+    font-family: "Poppins";
+    color: rgba(152,166,179,.81);  
+}
+#stat-container{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+#stat-container img{
+    height: 80px;
+}
+#stat-container p{
+    margin-top: -14px;
+}
+#investors > h2{
+    font-family: "Poppins";
+    color: rgba(152,166,179,.81); 
+}
+#c-banner{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 10px;
+}
+#c-banner img{
+    height: 120px;
+}
+#c-banner p{
+    font-weight: bolder;
+}
+#services{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: #2a2b36;
+    color: #919197;
+}
+#services h2{
+    margin-left: 30px;
+    color: white;
+}
+#services-city{
+    margin: 0 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+}
+#services-city p:hover{
+    font-weight: bold;
+    color: whitesmoke;
+}
+#social{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#social>div{
+    margin: 20px;
+    width:50%;
+    text-align: justify;
+}
+#social>div:nth-child(1) img{
+    height: 80px;
+}
+#social>div:nth-child(2){
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+#icon{
+    display: flex;
+    justify-content: space-between;
+}
+#download_store>div{
+    width: 80%;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#about{
+    margin: 10px;
+}
+#about > h2{
+    font-family: "Poppins";
+    color: rgba(152,166,179,.81); 
+}
+
+
+
+@media only screen and (min-width:0px) and (max-width:320px)
+        {
+            #navmid {
+                width: 25%;   
+                font-size: 10px; 
+            }
+            #navleft{        
+                margin-right: -10%;
+                margin-left: 0%;
+                font-size: 8px; 
+               }               
+               #navright{
+                   margin-right: 0px;            
+                   right: 0;
+                   font-size: 10px; 
+               }  
+               .hun {
+                   border: none;
+                   font-size: 8px;
+               }  
+               #FAQ{
+                   font-size: 10px;
+                   padding-top: 20px;
+               }
+               #login-a {
+                width: 250px;
+            }       
+            p ,.valid{
+                font-size: 12px;
+            }
+            #login-title {
+                font-size: 20px;
+                margin-left: 10px;
+            }
+            img {
+                width: 80%
+            }
+            #inputbtn {
+                margin-left: 5%;
+            }
+           
+               
+           
+           
+            
+        }
+
+        @media only screen and (min-width:321px) and (max-width:720px)
+        {
+
+            #navmid {
+                width: 30%;    
+                border: none;
+                margin-left: 10%;
+            }
+            #navleft{        
+                margin-right: -10%;
+                margin-left: 0%;
+               }               
+               #navright{
+                   margin-right: 5%;            
+                   right: 0;
+                   font-size: 12px;
+               }   
+            .hun {
+                border: none;
+                font-size: 12px;
+                /* margin-left: 0%; */
+            }  
+            #FAQ{
+                font-size: 10px;
+                padding-top: 20px;
+            }   
+            #login-a {
+                width: 300px;
+            }       
+            p{
+                font-size: 15px;
+            }         
+        }

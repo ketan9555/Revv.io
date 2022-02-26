@@ -7,168 +7,7 @@
     <script src="https://kit.fontawesome.com/f225725f7b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/navbar.css">
     <title>CartPage</title>
-    <style>
-        /* div {
-            border: 1px solid gray;
-        } */
-        #booking{
-            background-color: #f1f1f1;
-            margin-top: 48px;
-            padding: 20px;
-            display: flex;
-            overflow: hidden;
-            font-family: Arial, Helvetica, sans-serif;
-            color: rgb(24, 21, 21);
-        }
-        
-        #ldiv{
-            flex: 3.5;
-        }
-        #BookingDetails{
-            height: 270px;
-            margin-bottom: 20px;
-            display: flex;
-            padding: 30px;
-            box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
-        }
-        #carimg {
-            flex: 1;
-            /* border: 1px solid gray; */
-            align-items: center;
-        }
-        #carinfo {
-            flex: 3;
-            margin-left: 30px;
-            /* border: 1px solid gray; */
-            align-items: center;
-        }
-        #impoPoints{
-            margin-bottom: 20px;
-            height: 550px;
-            padding: 20px;        
-            box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
-        }
-        #rdiv{
-            flex: 2;
-            margin-left: 30px;
-            padding: 20px;
-            box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
-        }
-        .titleHeading {
-        width: 100%;
-        border-bottom: 3px solid #8caead;
-        line-height: .1em;
-        margin: 28px 0 20px;
-        text-align: center;
-        text-transform: uppercase;      
-        }
-
-        .titleHeadingSpan {
-        background: #f1f1f1;
-        padding: 0 10px;
-        font-size: 18px;
-        }
-        tbody {
-        display: table-row-group;
-        vertical-align: middle;
-        border-color: inherit;
-        }
-        .table-bordered td, .table-bordered th {
-        border: 2px dotted #e9ecef;
-        }
-        td {
-            padding: 15px;
-            text-align: s;
-        }
-        .seats {           
-            /* border: 1px solid pink; */
-            width:50px;
-            align-items: center;
-        }
-        #BookingDetails  p{
-            font-size: 12px;
-        }
-        #carpic {
-            display: flex;
-            margin-left: 20px;
-            text-align: center;
-        }
-        #promobutton, #pay {
-            padding: 7px;
-            border-radius: 5px;
-            background-color: #0ebaba;
-            color: white;
-            margin: 50px  10px 50px 50px;
-        }
-        #pay {
-            width: 100px;
-            padding: 10px;
-            margin-left: 40%;
-        }
-        #pcode {
-            padding: 0px;
-            /* border: none; */
-            color: rgba(0, 0, 0, 0.87);
-            cursor: inherit;
-            font: inherit;
-            background-color: #f1f1f1;
-            outline: none;
-            height: 30px;
-            border-radius: 5px;
-            width: 50%;
-        }
-        a{
-            text-decoration: none;
-            padding: 30px;
-        }
-        #date {
-            display: flex;
-            margin:10% 20% -2% 20%;
-            
-        }
-        #carinfo {
-            text-align: center;
-        }
-        #city {
-            margin: 5% 30%;
-            display: flex;
-            
-        }
-        #plan {
-            display: flex;
-            margin: 1% 5%;
-            text-align: center;
-        }
-        #Nodays {
-            margin-left: -10%;
-        }
-        .mapouter { 
-            position:relative;
-            text-align:right;
-            width:100%;
-            height:400px;
-            display: none;
-        }
-        .gmap_canvas {
-            overflow:hidden;
-            background:none!important;
-            width:100%;
-            height:400px;
-
-        }
-        .gmap_iframe {
-            height:400px!important;
-        }
-        #selactmap {
-            width: 80%;
-            height: 30px;
-        }
-  
-
-        
-
-
-    </style>
+    <link rel="stylesheet" href="./styles/cart.css">
 </head>
 <body>
     <div id="container"></div>
@@ -186,12 +25,12 @@
                 <div id="Nodays"></div>
                 <div id="city">
                     <div id="c"></div>
-                    <div><a href="">Change City</a></div>
+                    <div><a class="a" href="">Change City</a></div>
                     
                 </div>
                 <div id="plan">
                     <div id="p"></div>
-                    <div><a href="">Change Plan</a></div>
+                    <div><a class="a" href="">Change Plan</a></div>
                     
                 </div>
                 
@@ -229,8 +68,7 @@
 
                 <div id="one"></div>
                 <button id="promobutton"><i class="fas fa-tags"></i>Apply Coupon</button>
-        <input type="text" id="pcode" placeholder="type promo code">
- 
+        <input type="text" id="pcode" placeholder="type promo code"><hr>
         <div id="total"> </div>
         <div id="two"></div>
 
@@ -238,18 +76,16 @@
             <img src="" alt="">
         </div>
         
-        </div>   
-        <div id="map">
-            
-            <input type="text" id="selactmap" placeholder="select delivery address">
+        </div>   <hr>
+        <div id="map">        
+        <input type="text" id="selactmap" placeholder="Add delivery address">
             <div class="mapouter">
                 <div class="gmap_canvas">
                     <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="">   
-                    </iframe><a href="https://kokagames.com/">FNF</a></div></div>
+                    </iframe><a  href="https://kokagames.com/">FNF</a></div></div>
         </div>    
         <button id="pay">Pay</button>
     </div>
-  
 </div>
 
   <div id="footer"></div>  
@@ -258,3 +94,7 @@
 </html>
 <script type="module" src="cartPage.js"></script>
 <script type="module" src="index.js"></script>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initAutocomplete&libraries=places&v=weekly"
+async
+></script>
