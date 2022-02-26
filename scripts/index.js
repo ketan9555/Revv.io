@@ -39,6 +39,7 @@
 
           inputloc.innerHTML = event.target.textContent
           inputloc2.innerHTML = event.target.textContent
+          localStorage.setItem("city",event.target.textContent)
           //console.log(event.target.textContent)
           // }
       })
@@ -63,7 +64,7 @@
   // seach button...............................
   function searchfn() {
 
-      window.location.href = "fiter.html"
+      window.location.href = "cars.html"
 
 
   }
