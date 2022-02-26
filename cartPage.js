@@ -1,4 +1,4 @@
-import { navbar,footer }  from "./components/navbar.js";
+import { navbar }  from "./components/navbar.js";
 //console.log(navbar)
 
 let navbardiv = document.getElementById("container")
@@ -48,12 +48,15 @@ function cardetails(){
 
     let startdate = document.createElement("h4");
     startdate.innerHTML = sdate;
+    startdate.style.marginRight = "15%"
 
     let enddate = document.createElement("h4");
     enddate.innerHTML = edate;
+    enddate.style.marginLeft = "20%"
 
     let to = document.createElement("p");
-    to.innerHTML = "To";
+    to.innerHTML = "  To   ";
+    
 
     div0.append(startdate,to,enddate);
 
@@ -85,6 +88,7 @@ function cardetails(){
     
     let img = document.createElement("img");
     img.src = mycar.imgUrl;
+    img.style.width ="200px"
     img.style.marginBottom = "35px"
     img.style.marginTop = "35px"
 
