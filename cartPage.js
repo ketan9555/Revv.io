@@ -248,6 +248,34 @@ else{
 
 }
 
+
+// payment page start
+let payment = document.getElementById("pay");
+payment.onclick = function() {
+    document.getElementById("personaldetails2").style.display ="none";
+document.getElementById("otpcontainer").style.display ="none";
+document.getElementById("personaldetails").style.display ="block";
+}
+
+let checkpaydetails = document.getElementById("submitaadhar");
+checkpaydetails.onclick = function() {
+document.getElementById("personaldetails").style.display ="none";
+document.getElementById("otpcontainer").style.display ="none";
+document.getElementById("personaldetails2").style.display ="block";
+}  
+
+let generateotp = document.getElementById("checksubmit");
+generateotp.onclick = function() {
+document.getElementById("personaldetails").style.display ="none";
+document.getElementById("personaldetails2").style.display ="none";
+document.getElementById("otpcontainer").style.display ="block";
+} 
+// payment page end
+
+
+
+
+
 // const  rundata = async (e) => {   
 //     try {
 //         if (e === "Enter"){
