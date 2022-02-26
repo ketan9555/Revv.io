@@ -7,11 +7,11 @@ const navbar = () => {
     <h6 style="margin-top: -12px;margin-left:42px ;">Sanitized. Safe</h6></a>
     </div>
     <div id="navmid">
-       <div  class="hun">
-           <p class="subs"><b>Hyundai</b>  Subcription</p>
+      <div  class="hun">
+      <a href="hyundai-subscription.html" class="subs"><b>Hyundai</b>  Subcription</a>
        </div>
        <div class="hun">
-           <p class="subs"> <b>Mahindra </b> Subcription</p>
+       <a href="mahindra-subscription.html" class="subs"> <b>Mahindra </b> Subcription</a>
        </div>
     </div>
     <div id="navright">       

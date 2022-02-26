@@ -112,7 +112,7 @@ hr {
     width: 10%;
 }
 
-#effective-date {
+#effective-date1,#effective-date2,#effective-date{
     margin-top: 10px;
     border: none;
 

@@ -63,7 +63,11 @@
   })
   // seach button...............................
   function searchfn() {
+    let start_data=document.getElementById("effective-date1").value
+    let end_data=document.getElementById("effective-date2").value
 
+    localStorage.setItem("start-date",start_data)
+localStorage.setItem("end-date",end_data)
       window.location.href = "cars.html"
 
 
