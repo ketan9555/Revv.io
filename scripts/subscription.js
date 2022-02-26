@@ -69,3 +69,20 @@ document.getElementById('search-btn').addEventListener('click',(event)=>{
     console.log(startdate);
     window.location.href ='../cars.html';
 })
+
+const navmid = document.getElementById("navmid");
+navmid.textContent = "";
+// navmid.classList.add('d-flex')
+navmid.classList.add('d-flex','space-between','p-20')
+
+// let img = document.createElement('img');
+// img.src ="https://www.revv.co.in/grapheneImages/hyundai/hyundai-logo-sub@2x.png";
+// img.height = '23px';
+
+let hiw = document.createElement('h4');
+hiw.textContent = 'How it works';
+hiw.style.alignSelf='center';
+// hiw.style.padding='0x 30px';
+hiw.addEventListener('click',(event) => {window.location.href='#how-it-works'});
+
+navmid.append(hiw);

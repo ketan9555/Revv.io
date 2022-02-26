@@ -343,3 +343,4 @@ document.getElementById('fuel_ie').addEventListener('change',(event)=>
 
   document.getElementById('inc_exc').textContent=value;
 })
+
