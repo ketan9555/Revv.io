@@ -13,6 +13,9 @@ div{
 body > div {
     /* padding: 30px; */
 }
+.white{
+    color:white;
+}
 .space-between{
     justify-content: space-between;
 }

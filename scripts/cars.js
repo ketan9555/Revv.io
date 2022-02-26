@@ -227,11 +227,11 @@ function addBookButtonEventHandler() {
       let selected = localStorage.getItem("selected");
       let selected_car = JSON.parse(localStorage.getItem("car_selected"));
 
-      selected_car.selected_rent = selected_car.rent[selected];
+      selected_car.rent = selected_car.rent[selected];
       selected_car.selected_Key = selected;
       console.log(selected_car);
 
-      localStorage.setItem("booking_detail", JSON.stringify(selected_car));
+      localStorage.setItem("selectedcar", JSON.stringify(selected_car));
     });
   });
 }
