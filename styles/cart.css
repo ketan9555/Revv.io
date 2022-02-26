@@ -1,0 +1,364 @@
+       /* div {
+            border: 1px solid gray;
+        } */
+        #booking{
+            background-color: #f1f1f1;
+            margin-top: 48px;
+            padding: 20px;
+            display: flex;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(24, 21, 21);
+        }
+        
+        #ldiv{
+            flex: 3.5;
+        }
+        #BookingDetails{
+            height: 270px;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 30px;
+            box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
+        }
+        #carimg {
+            flex: 1;
+            /* border: 1px solid gray; */
+            align-items: center;
+        }
+        #carinfo {
+            flex: 3;
+            margin-left: 30px;
+            /* border: 1px solid gray; */
+            align-items: center;
+        }
+        #impoPoints{
+            margin-bottom: 20px;
+            height: 550px;
+            padding: 20px;        
+            box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
+        }
+        #rdiv{
+            flex: 2;
+            margin-left: 30px;
+            padding: 20px;
+            box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px, rgb(0 0 0 / 12%) 0px 1px 4px;
+        }
+        .titleHeading {
+        width: 100%;
+        border-bottom: 3px solid #8caead;
+        line-height: .1em;
+        margin: 28px 0 20px;
+        text-align: center;
+        text-transform: uppercase;      
+        }
+
+        .titleHeadingSpan {
+        background: #f1f1f1;
+        padding: 0 10px;
+        font-size: 18px;
+        }
+        tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+        }
+        .table-bordered td, .table-bordered th {
+        border: 2px dotted #e9ecef;
+        }
+        td {
+            padding: 15px;
+            text-align: s;
+        }
+        .seats {           
+            /* border: 1px solid pink; */
+            width:50px;
+            align-items: center;
+        }
+        #BookingDetails  p{
+            font-size: 12px;
+        }
+        #carpic {
+            display: flex;
+            margin-left: 20px;
+            text-align: center;
+        }
+        #promobutton, #pay {
+            padding: 7px;
+            border-radius: 5px;
+            background-color: #0ebaba;
+            color: white;
+            margin: 50px  10px 50px 50px;
+            border: none;
+            height: 40px;
+        }
+        #pay {
+            width: 100px;
+            padding: 10px;
+            margin-left: 40%;
+        }
+        #pcode {
+            padding: 0px;
+            /* border: none; */
+            color: rgba(0, 0, 0, 0.87);
+            cursor: inherit;
+            font: inherit;
+            background-color: #f1f1f1;
+            outline: none;
+            height: 40px;
+            border-radius: 5px;
+            width: 50%;
+            border: none;
+            border-bottom: 1px solid rgb(128, 128, 128);
+        }
+        #pcode:hover {
+            color: #0ebaba;
+        }
+        .a{
+            text-decoration: none;
+            padding: 30px;
+        }
+        #date {
+            display: flex;
+            margin:10% 20% -2% 20%;           
+        }
+        #carinfo {
+            text-align: center;
+        }
+        #city {
+            margin: 5% 30%;
+            display: flex;           
+        }
+        #plan {
+            display: flex;
+            margin: 1% 5%;
+            text-align: center;
+            width: 100%;
+        }
+        #Nodays {
+            margin-left: -10%;
+        }
+        .mapouter { 
+            position:relative;
+            text-align:right;
+            width:100%;
+            height:400px;
+            display: none;
+        }
+        .gmap_canvas {
+            overflow:hidden;
+            background:none!important;
+            width:100%;
+            height:400px;
+
+        }
+        .gmap_iframe {
+            height:400px!important;
+        }
+        #selactmap {
+            margin-top: 20px;
+            margin-left: 2%;
+            width: 90%;
+            height: 30px;
+            border: none;
+            background-color: none;
+            padding: 0px;
+            /* border: none; */
+            color: rgba(0, 0, 0, 0.87);
+            cursor: inherit;
+            font: inherit;
+            background-color: #f1f1f1;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid rgb(128, 128, 128);
+        }
+        #selactmap :focus{
+            color: #0ebaba;
+            border-bottom: 1px solid #0ebaba;
+        }
+
+
+                
+       /* payment  page start */
+       #personaldetails {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        opacity: 2;
+        background-color: rgba(0, 0, 0, 0.54);
+        z-index: 7;
+        padding: 5px;
+        display: none;
+
+    }
+
+    #aadharcheck {
+        background-color: honeydew;
+        border: 1px solid lightgray;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgba(235, 235, 241, 0.2) 0px 7px 29px 0px;
+        padding: 15px;
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    #aadharcheck>form>input {
+        height: 30px;
+        border-radius: 2.5px;
+        outline: none;
+        width: 100%;
+        border: 1px solid;
+        margin-top: 5%;
+
+    }
+
+    #submitaadhar {
+        cursor: pointer;
+        border-radius: 30px;
+        background-color: rgb(2, 204, 255);
+    }
+
+    #submitaadhar:hover {
+        color: white;
+        background-color: black;
+    }
+
+    #personaldetails2 {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        opacity: 2;
+        background-color: rgba(0, 0, 0, 0.54);
+        z-index: 7;
+        padding: 5px;
+        display: none;
+
+    }
+
+    #gotopay {
+        background-color: honeydew;
+        border: 1px solid lightgray;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgba(235, 235, 241, 0.2) 0px 7px 29px 0px;
+        padding: 15px;
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    #gotopay>form>input {
+        height: 30px;
+        border-radius: 2.5px;
+        outline: none;
+        width: 100%;
+        border: 1px solid;
+        margin-top: 5%;
+
+    }
+
+    #checksubmit {
+        cursor: pointer;
+        border-radius: 30px;
+        background-color: rgb(2, 204, 255);
+    }
+
+    #checksubmit:hover {
+        color: white;
+        background-color: black;
+    }
+
+    #otpcontainer {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        opacity: 2;
+        background-color: rgba(0, 0, 0, 0.54);
+        z-index: 7;
+        padding: 5px;
+        display: none;
+    }
+
+    #otppg {
+        background-color: honeydew;
+        border: 1px solid lightgray;
+        width: 300px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgba(235, 235, 241, 0.2) 0px 7px 29px 0px;
+        padding: 15px;
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    #otppg>form>input {
+        height: 30px;
+        border-radius: 2.5px;
+        outline: none;
+        width: 100%;
+        border: 1px solid;
+        margin-top: 5%;
+
+    }
+
+    #submitotp {
+        cursor: pointer;
+        border-radius: 30px;
+        background-color: rgb(2, 204, 255);
+    }
+
+    #submitotp:hover {
+        color: white;
+        background-color: black;
+    }
+    /* paymen pag end */
+
+        @media only screen and (min-width:0px) and (max-width:320px)
+        {
+            #booking{
+                display: contents;
+                font-size: 10px;
+            }
+            #impoPoints{
+                height: auto;
+                font-size: 10px;
+            }
+            #BookingDetails{
+                display: contents;              
+                margin-top: 60px;
+                font-size: 10px;
+                margin-left: 20px;
+            }                    
+        }
+
+        @media only screen and (min-width:321px) and (max-width:720px)
+        {
+            #booking{
+                display: contents;
+                font-size: 12px;
+            }
+            #impoPoints{
+                height: auto;
+            }
+            #BookingDetails{  
+                display: contents;              
+                margin-top: 60px;
+            }                       
+        }
+  
+
+        
