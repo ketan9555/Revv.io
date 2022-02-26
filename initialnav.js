@@ -1,7 +1,7 @@
 import { navbar }  from "./components/navbar.js";
 //console.log(navbar)
 
-let navbardiv = document.getElementById("container")
+let navbardiv = document.getElementById("nav-container")
 navbardiv.innerHTML = navbar();
 
 let loginshow = document.getElementById("logshow")
@@ -10,8 +10,11 @@ document.getElementById("login").style.display ="block"
 }
 
 document.querySelector("form").addEventListener("submit", signin);
-var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
+//var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
+
 function signin(event){
+  var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
+
 event.preventDefault();
 var mail = document.getElementById("outmail").value
 var pass = document.getElementById("outpass").value

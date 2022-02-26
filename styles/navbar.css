@@ -14,6 +14,7 @@
     position: fixed;
     color: #212529;
     background-color: white;
+    z-index: 10;
 }
 
 #navleft{
@@ -94,7 +95,7 @@ margin-left: 10px;
     position: fixed;
     height: 100vh;
     width: 100%;
-    top: 0px;
+    top: 80px;
     left: 0px;
     opacity: 2;
     background-color: rgba(0, 0, 0, 0.54);
@@ -110,7 +111,7 @@ margin-left: 10px;
     position: fixed;
     height: 100vh;
     width: 100%;
-    top: 0px;
+    top: 80px;
     left: 0px;
     opacity: 2;
     background-color: rgba(0, 0, 0, 0.54);

@@ -7,22 +7,26 @@
     <title>Rent a Car | Book a Car on Rent with Revv for safe commute</title>
     <link rel="stylesheet" href="styles/baseclasses.css" />
     <link rel="stylesheet" href="styles/cars.css" />
+    <link rel="stylesheet" href="styles/navbar.css">
+
     <script
       src="https://kit.fontawesome.com/8e42604464.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://kit.fontawesome.com/f225725f7b.js" crossorigin="anonymous"></script>
+
   </head>
   <body>
-    <div id="nav-search-section">
-      <h1 class="grey">nav & search bar goes here</h1>
+    <div id="nav-container">
+ 
     </div>
     <div id="linksbar">
       <a href="/">Car Rental</a> > <a href="/">Rent a Car</a> >
       <a href="/">Car Rental in <span class="loc"></span></a>
       <a href="/">Cars for Ren in <span class="loc"></span></a>
     </div>
-    <div id="main" class="d-flex space-between">
-      <div id="filters-container" class="d-flex col mr-10">
+    <div id="main" class="d-flex space-between ">
+      <div id="filters-container" class="d-flex col mr-10 p-20">
         <div id="filter-header" class="d-flex space-between">
           <h2>Filters</h2>
           <button id="reset-filter-btn">RESET ALL</button>
@@ -127,7 +131,7 @@
         </div>
       </div>
       <div id="results-container" class="d-flex col">
-        <div id="results-header" class="d-flex space-between">
+        <div id="results-header" class="d-flex space-between p-20">
           <h2>
             <span class="teal">Car Rental in </span> <span class="loc"></span>
           </h2>
@@ -303,4 +307,6 @@
     </div>
   </body>
   <script src="scripts/cars.js" type="module"></script>
+  <script src="initialnav.js" type="module"></script>
+
 </html>

@@ -232,6 +232,7 @@ function addBookButtonEventHandler() {
       console.log(selected_car);
 
       localStorage.setItem("selectedcar", JSON.stringify(selected_car));
+      window.location.href = '../cartPage.html';
     });
   });
 }

@@ -4,17 +4,14 @@ body{
     margin: 0px;
     font-family: 'Poppins', sans-serif;
 }
-/* div{
-    /* border: 2px solid black; */
-    /* margin: 5px; */
-    /* border-radius: 7px */
-/* }  */
+
 
 body > div {
     padding: 30px;
 }
 #nav-container{
-    height: 100px;
+    padding: 0px;
+    /* height: 100px; */
 }
 
 #search-section{
@@ -64,13 +61,13 @@ body > div {
     display: inline-block;
     height: 20px;
     position:relative;
-    top: 265px;
+    top: 205px;
     left: 57px;
 }
 #location{
     text-transform: none;
     font-size: 24px;
-    margin: -15px 0px 0px 0px;
+    /* margin: -15px 0px 0px 0px; */
     font-weight: 600;
 }
 #calender-icon{
@@ -97,7 +94,7 @@ body > div {
 #form-duration p:nth-child(2){
      text-transform: none;
     font-size: 24px;
-    margin: -15px 0px 0px 0px;
+    /* margin: -15px 0px 0px 0px; */
     font-weight: 600;
 }
 #search-btn{
