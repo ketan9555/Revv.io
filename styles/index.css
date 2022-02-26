@@ -3,41 +3,7 @@
     margin: 0px
 }
 
-#navbar {
-    height: 60px;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
-    justify-content: space-around;
-    position: fixed;
-
-    z-index: 10;
-}
-
-#navleft {
-    width: 130px;
-    height: 100%;
-
-}
-
-#navright {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#navright>div {
-    width: 25%;
-    height: 55%;
-    border: .5px solid grey;
-    border-radius: 5px;
-    margin-top: 10px;
-    display: flex;
-    font-family: Sans-serif;
-}
 
 #navbar2 {
     background-color: white;
