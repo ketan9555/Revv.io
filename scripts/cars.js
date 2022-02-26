@@ -14,20 +14,64 @@ localStorage.setItem("cars", JSON.stringify(cars));
 const res_container = document.getElementById("results-container");
 const cards_container = document.getElementById("cards-container");
 
-let location_spans = [...document.querySelectorAll('.loc')];
+let location_spans = [...document.querySelectorAll(".loc")];
 
-for( let span of location_spans){
-  span.textContent = localStorage.getItem('city');
+for (let span of location_spans) {
+  span.textContent = localStorage.getItem("city");
 }
 var i = 0;
 
 let carsData = JSON.parse(localStorage.getItem("cars"));
+// process start date & end date
+let startdate = localStorage.getItem("start-date") || "2022-02-28";
+let enddate = localStorage.getItem("end-date") || "2022-03-06";
+
+enddate = enddate.split("-");
+startdate = startdate.split("-");
+
+enddate = new Date(enddate[0], enddate[1] - 1, enddate[2]);
+startdate = new Date(startdate[0], startdate[1] - 1, startdate[2]);
+
+let diff = getNumberOfDays(startdate, enddate);
+console.log(diff);
+
+function getNumberOfDays(date1, date2) {
+  // 1000ms * 60 secs * 60 mins * 24 hrs
+  var oneDay = 1000 * 60 * 60 * 24;
+
+  var diffInTime = date2.getTime() - date1.getTime();
+
+  return Math.round(diffInTime / oneDay);
+}
 // extra & popularity properities to objects
 carsData = carsData.map((el) => {
   el.extra = Math.round(Math.random() * 10) + 5;
   el.popularity = Math.round(Math.random() * 100);
   return el;
 });
+
+let range_obj = {}
+// console.log()
+changeRangeAndPrice(diff,carsData);
+function changeRangeAndPrice(days, carsData) {
+
+  // if(days > 6){
+
+  // }
+  carsData = carsData.map((el) => {
+    console.log(el.rent);
+    el.rent.low = el.rent.low + days * 400;
+    el.rent.avg = el.rent.avg + days * 400;
+    el.rent.Unlimited = el.rent.Unlimited + days * 400;
+    console.log(el.rent);
+
+    return el;
+  });
+
+
+}
+
+
 localStorage.setItem("cars", JSON.stringify(carsData));
 
 // console.log(carsData);
@@ -35,35 +79,35 @@ renderCards(processActiveFilters(carsData));
 // renderCards([]);
 
 // render cars data ;
-function renderCards(carList,) {
-  console.log("in render function",i++);
+function renderCards(carList) {
+  console.log("in render function", i++);
   // console.log(carList);
   cards_container.textContent = "";
-  if(carList.length == 0){
-    cards_container.classList.add('no-elements');
-    let div = document.createElement('div');
-    div.classList.add('text-centre');
+  if (carList.length == 0) {
+    cards_container.classList.add("no-elements");
+    let div = document.createElement("div");
+    div.classList.add("text-centre");
 
-    let img_div = document.createElement('div');
-    let img = document.createElement('img');
+    let img_div = document.createElement("div");
+    let img = document.createElement("img");
     img.src = "https://www.revv.co.in/imgs/icons/info-grey.svg";
 
     img_div.append(img);
-    let h3 = document.createElement('h3');
-    h3.textContent = 'Sorry ! No results found';
-    h3.style.fontWeight = '100';
+    let h3 = document.createElement("h3");
+    h3.textContent = "Sorry ! No results found";
+    h3.style.fontWeight = "100";
 
-    let p = document.createElement('p');
-    p.textContent = 'Please modify your filters to see results';
+    let p = document.createElement("p");
+    p.textContent = "Please modify your filters to see results";
 
-    let or = document.createElement('p');
-    or.textContent = 'or';
+    let or = document.createElement("p");
+    or.textContent = "or";
 
-    let reset_filt_btn = document.createElement('button');
-    reset_filt_btn.textContent = 'Reset Filters';
-    reset_filt_btn.id = 'reset-filter-btn2';
+    let reset_filt_btn = document.createElement("button");
+    reset_filt_btn.textContent = "Reset Filters";
+    reset_filt_btn.id = "reset-filter-btn2";
 
-    reset_filt_btn.addEventListener('click',(event)=>{
+    reset_filt_btn.addEventListener("click", (event) => {
       let activeCBs = [
         ...document.querySelectorAll('input[type="checkbox"]:checked'),
       ];
@@ -72,13 +116,13 @@ function renderCards(carList,) {
         el.checked = false;
       });
       renderCards(processActiveFilters());
-    })
+    });
 
-    div.append(img_div,h3,p,or,reset_filt_btn);
+    div.append(img_div, h3, p, or, reset_filt_btn);
     cards_container.append(div);
     return;
   }
-  cards_container.classList.remove('no-elements');
+  cards_container.classList.remove("no-elements");
   let div = document.createElement("div");
   div.innerHTML = firstCard();
   cards_container.append(div);
@@ -101,9 +145,11 @@ function renderCards(carList,) {
 let allCBs = [...document.querySelectorAll('#filters [type="checkbox"]')];
 
 // add event listeners to all checkboxes
-allCBs.forEach((el) => {addEventListener("change", updateContent)});
+allCBs.forEach((el) => {
+  addEventListener("change", updateContent);
+});
 
-function updateContent(){
+function updateContent() {
   renderCards(processActiveFilters());
 }
 
@@ -126,7 +172,9 @@ function processActiveFilters() {
   let filt_data = carsData.map((el) => el);
 
   //   console.log(filt_data);
-  let activeCBs = [...document.querySelectorAll('input[type="checkbox"]:checked')];
+  let activeCBs = [
+    ...document.querySelectorAll('input[type="checkbox"]:checked'),
+  ];
 
   // if there are no active CBs
   if (activeCBs.length == 0) {
@@ -172,7 +220,6 @@ function processActiveFilters() {
   }
   // console.log('paf',filt_data);
   return filt_data;
-  
 }
 
 function rentsEventHandler() {
@@ -232,7 +279,7 @@ function addBookButtonEventHandler() {
       console.log(selected_car);
 
       localStorage.setItem("selectedcar", JSON.stringify(selected_car));
-      window.location.href = '../cartPage.html';
+      window.location.href = "../cartPage.html";
     });
   });
 }
@@ -266,16 +313,15 @@ function sortItems(event) {
     case POP:
       sortByPopularity(data);
       break;
-
   }
   let extras = [];
   data.forEach((el) => extras.push(el.extra));
   console.log("after sort", extras);
   renderCards(data);
   let selected = localStorage.getItem("selected") || "low";
-   [...document.querySelectorAll(`.${selected}`)].forEach((el) => {
-     el.classList.add("selected");
-   });
+  [...document.querySelectorAll(`.${selected}`)].forEach((el) => {
+    el.classList.add("selected");
+  });
   event.stopPropagation();
 }
 // console.log(processActiveFilters());
@@ -293,7 +339,6 @@ function sortByPrice(reverse = false, data) {
 
   // console.log("after", sorted_data);
   return data;
-
 }
 
 // sort funcion is working
@@ -315,32 +360,30 @@ function sortByExtra(reverse = false, data) {
   return data;
 }
 
-function sortByPopularity(data){
-  data.sort((a,b) => a.popularity - b.popularity);
+function sortByPopularity(data) {
+  data.sort((a, b) => a.popularity - b.popularity);
   return data;
 }
 
 // fuelcost checkbox
-document.getElementById('fuel_ie').addEventListener('change',(event)=>
-{
+document.getElementById("fuel_ie").addEventListener("change", (event) => {
   event.stopPropagation();
-  let value = 'excludes';
-  localStorage.setItem('fuel_charge','Excluded')
-  carsData = JSON.parse(localStorage.getItem('cars'));
-  if(document.getElementById('fuel_ie').checked){
-    value = 'includes';
-    localStorage.setItem('fuel_charge','Included');
+  let value = "excludes";
+  localStorage.setItem("fuel_charge", "Excluded");
+  carsData = JSON.parse(localStorage.getItem("cars"));
+  if (document.getElementById("fuel_ie").checked) {
+    value = "includes";
+    localStorage.setItem("fuel_charge", "Included");
     // console.log(typeof carsData)
-    carsData = carsData.map(el => {
+    carsData = carsData.map((el) => {
       el.rent.low += 1200;
       el.rent.avg += 1100;
       el.rent.Unlimited += 1050;
-      el.extra +=3;
+      el.extra += 3;
       return el;
-    })
+    });
   }
   renderCards(processActiveFilters(carsData));
 
-  document.getElementById('inc_exc').textContent=value;
-})
-
+  document.getElementById("inc_exc").textContent = value;
+});
