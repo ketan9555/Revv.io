@@ -21,20 +21,20 @@ navbardiv.innerHTML = navbar();
 //         // avg :  4949,
 //         // Unlimited : 5439,   
 // }
-let startdate = "25-02-2022 "
-let ensdate = "28-02-2022"
-let city = "Pune"
-localStorage.setItem("startdate",JSON.stringify(startdate));
-localStorage.setItem("ensdate",JSON.stringify(ensdate))
-localStorage.setItem("city",JSON.stringify(city))
+// let startdate = "25-02-2022 "
+// let ensdate = "28-02-2022"
+// let city = "Pune"
+// localStorage.setItem("startdate",JSON.stringify(startdate));
+// localStorage.setItem("ensdate",JSON.stringify(ensdate))
+// localStorage.setItem("city",JSON.stringify(city))
 
 let data = JSON.parse(localStorage.getItem("selectedcar"));
 
-var sdate = JSON.parse(localStorage.getItem("startdate"));
-var edate = JSON.parse(localStorage.getItem("ensdate"));
-var selectdcity = JSON.parse(localStorage.getItem("city"));
+var sdate = localStorage.getItem("start-date");
+var edate = localStorage.getItem("end-date");
+var selectdcity = localStorage.getItem("city");
 var fuel = localStorage.getItem("fuel_charge");
-console.log(fuel)
+//console.log(fuel)
 
 localStorage.setItem("selectedcar",JSON.stringify(data))
 let imgg = document.getElementById("carimg")
@@ -65,7 +65,7 @@ function cardetails(){
 
     let d1 = sdate.split("-");
     let d2 = edate.split("-")
-    let sub = +d2[0] - +d1[0];
+    let sub = +d2[2] - +d1[2];
     console.log(sub)
 
     let Nodate = document.createElement("p");
