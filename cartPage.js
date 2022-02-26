@@ -63,10 +63,35 @@ function cardetails(){
     
     div0.append(startdate,to,enddate);
 
-    let d1 = sdate.split("-");
-    let d2 = edate.split("-")
-    let sub = +d2[2] - +d1[2];
-    console.log(sub)
+    // let d1 = sdate.split("-");
+    // let d2 = edate.split("-")
+    // let sub = +d2[2] - +d1[2];
+    // console.log(sub)
+
+     startdate = localStorage.getItem("start-date") || "2022-02-28";
+     enddate = localStorage.getItem("end-date") || "2022-03-06";
+    
+    enddate = enddate.split("-");
+    startdate = startdate.split("-");
+    
+    enddate = new Date(enddate[0], enddate[1] - 1, enddate[2]);
+    startdate = new Date(startdate[0], startdate[1] - 1, startdate[2]);
+    
+    let sub = getNumberOfDays(startdate, enddate);
+    console.log(sub);
+    
+    function getNumberOfDays(date1, date2) {
+      // 1000ms * 60 secs * 60 mins * 24 hrs
+      var oneDay = 1000 * 60 * 60 * 24;
+    
+      var diffInTime = date2.getTime() - date1.getTime();
+    
+      return Math.round(diffInTime / oneDay);
+    }
+    
+
+
+
 
     let Nodate = document.createElement("p");
     Nodate.innerHTML = `<i class="far fa-clock"></i>  ` + sub + " Days";
@@ -76,7 +101,7 @@ function cardetails(){
     cit.innerHTML = selectdcity ;
 
     let plann = document.createElement("h4");
-    plann.innerHTML ="Pricing Plan:" + "Includes 490 kms," + fuel + " fuel";
+    plann.innerHTML ="Pricing Plan:" + "Unlimited kms  " + fuel + " fuel";
 
     div11.append(cit);
     div22.append(plann);
