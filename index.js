@@ -125,6 +125,7 @@ startfill.onclick =  function formSubmit(){
       alert("Sign-up succsessfully...")  
       document.getElementById("login").style.display ="block";
       document.getElementById("signup").style.display ="none"
+     
    }   
   }
 

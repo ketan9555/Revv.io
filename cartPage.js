@@ -242,6 +242,11 @@ else{
 }
 })
 
+
+// payment //
+
+
+
 // let map = document.getElementsByClassName("selactmap");
 // let add = document.getElementsByClassName("gmap_iframe");
 // add.src = `https://maps.google.com/maps?width=600&q=pune&amp;height=400&amp;hl=en&amp;q=&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed`
@@ -272,9 +277,39 @@ document.getElementById("otpcontainer").style.display ="block";
 } 
 // payment page end
 
+// opt 
 
+document.getElementById("gtotp").addEventListener("submit", otpcall);
 
+function otpcall(event) {
+    event.preventDefault();
+    var otp = document.querySelector("#otp").value;
 
+    if (otp === "12345") {
+        window.location.href = "loading.html";
+       
+    } else {
+        alert("Invalid OTP");
+    }
+}
+
+document.getElementById("getpay").addEventListener("checksubmit", call);
+
+function call(event) {
+    event.preventDefault();
+    var cardno = document.querySelector("#cardno").value;
+    var cvv = document.querySelector("#cvv").value;
+    var exdate = document.querySelector("#exdate").value;
+    
+    if (cvv === "123" && exdate === "01-02-2022") {
+        alert("Otp Sent Succesfully");
+        window.location.href = "OTP.html";
+    } else {
+        alert("Invalid Details");
+    }
+}
+
+//otp end
 
 // const  rundata = async (e) => {   
 //     try {

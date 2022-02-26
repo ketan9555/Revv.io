@@ -178,40 +178,7 @@
         }
 
 
-        @media only screen and (min-width:0px) and (max-width:320px)
-        {
-            #booking{
-                display: contents;
-                font-size: 10px;
-            }
-            #impoPoints{
-                height: auto;
-                font-size: 10px;
-            }
-            #BookingDetails{
-                display: contents;              
-                margin-top: 60px;
-                font-size: 10px;
-                margin-left: 20px;
-            }                    
-        }
-
-        @media only screen and (min-width:321px) and (max-width:720px)
-        {
-            #booking{
-                display: contents;
-                font-size: 12px;
-            }
-            #impoPoints{
-                height: auto;
-            }
-            #BookingDetails{  
-                display: contents;              
-                margin-top: 60px;
-            }                       
-        }
-
-        
+                
        /* payment  page start */
        #personaldetails {
         position: fixed;
@@ -359,6 +326,39 @@
         background-color: black;
     }
     /* paymen pag end */
+
+        @media only screen and (min-width:0px) and (max-width:320px)
+        {
+            #booking{
+                display: contents;
+                font-size: 10px;
+            }
+            #impoPoints{
+                height: auto;
+                font-size: 10px;
+            }
+            #BookingDetails{
+                display: contents;              
+                margin-top: 60px;
+                font-size: 10px;
+                margin-left: 20px;
+            }                    
+        }
+
+        @media only screen and (min-width:321px) and (max-width:720px)
+        {
+            #booking{
+                display: contents;
+                font-size: 12px;
+            }
+            #impoPoints{
+                height: auto;
+            }
+            #BookingDetails{  
+                display: contents;              
+                margin-top: 60px;
+            }                       
+        }
   
 
         
