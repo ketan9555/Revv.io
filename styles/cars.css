@@ -19,7 +19,9 @@
     border-radius: 2px;
 
 }
-
+#filter-header{
+    align-items: center;
+}
 #results-container{
     flex:7;
 }
