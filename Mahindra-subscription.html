@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mahindra Car Subscription</title>
     <link rel="stylesheet" href="./styles/subscription.css" />
+    <link rel="stylesheet" href="styles/baseclasses.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <script
       src="https://kit.fontawesome.com/8e42604464.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://kit.fontawesome.com/f225725f7b.js" crossorigin="anonymous"></script>
+
   </head>
   <body>
     <!-- modals -->
@@ -52,7 +55,10 @@
     </div>
     <div id="nav-container"></div>
     <div id="search-section">
+      <img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/locationIcon.png" alt="" id="location-icon">
+
       <div id="search-controls">
+
         <div id="form-header">
           <img
             src="https://www.revv.co.in/grapheneImages/newopen/logo_mahindra_sub_web@3x.png"
@@ -63,19 +69,21 @@
             Mahindra Cars Subscription in <span id="location-span">location</span>
           </p>
         </div>
+
         <div id="form-controls">
           <div id="form-location">
             <p>City</p>
-            <p id="location">Location</p>
+            <p id="location" class="d-flex space-between">Location  <i class="fas fa-chevron-down"></i></p>
+
           </div>
           <div id="form-startdate">
-            <p>Start Date</p>
+            <p><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/calenderIcon.png" alt="" id="calender-icon"><input type="date" name="" id="startdate"></p>
           </div>
           <div id="form-duration">
             <p>Duration</p>
             <p>1,3,or 6 Months</p>
           </div>
-          <button id="search-btn">Search <i class="fas fa-chevron-right"></i></button>
+          <button id="search-btn" class="d-flex space-between">Search <i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
       <div id="search-banner">
