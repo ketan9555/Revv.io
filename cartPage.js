@@ -7,30 +7,34 @@ navbardiv.innerHTML = navbar();
 // let footerdiv = document.getElementById("footer")
 // footerdiv.innerHTML = footer();
 
-let data = {
-    brand : "Tata",
-    model : "Tata Tiago (P)",
-    imgUrl : "https://s3-us-west-2.amazonaws.com/revvselfdrivecar/carImages/white_images/Tata-Tiago4.png",
-    seats : "5",
-    transmission : "Manual", 
-    fuel: "Petrol", 
-    segment : "Hatchback", 
-    month_rent : 12000,
-    rent : 4949,
-        // low :  3479,
-        // avg :  4949,
-        // Unlimited : 5439,   
-}
+// let data = {
+//     brand : "Tata",
+//     model : "Tata Tiago (P)",
+//     imgUrl : "https://s3-us-west-2.amazonaws.com/revvselfdrivecar/carImages/white_images/Tata-Tiago4.png",
+//     seats : "5",
+//     transmission : "Manual", 
+//     fuel: "Petrol", 
+//     segment : "Hatchback", 
+//     month_rent : 12000,
+//     rent : 4949,
+//         // low :  3479,
+//         // avg :  4949,
+//         // Unlimited : 5439,   
+// }
 let startdate = "25-02-2022 "
-let ensdate = "27-02-2022"
+let ensdate = "28-02-2022"
 let city = "Pune"
 localStorage.setItem("startdate",JSON.stringify(startdate));
 localStorage.setItem("ensdate",JSON.stringify(ensdate))
 localStorage.setItem("city",JSON.stringify(city))
 
+let data = JSON.parse(localStorage.getItem("selectedcar"));
+
 var sdate = JSON.parse(localStorage.getItem("startdate"));
 var edate = JSON.parse(localStorage.getItem("ensdate"));
 var selectdcity = JSON.parse(localStorage.getItem("city"));
+var fuel = localStorage.getItem("fuel_charge");
+console.log(fuel)
 
 localStorage.setItem("selectedcar",JSON.stringify(data))
 let imgg = document.getElementById("carimg")
@@ -57,7 +61,6 @@ function cardetails(){
     let to = document.createElement("p");
     to.innerHTML = "  To   ";
     
-
     div0.append(startdate,to,enddate);
 
     let d1 = sdate.split("-");
@@ -73,19 +76,17 @@ function cardetails(){
     cit.innerHTML = selectdcity ;
 
     let plann = document.createElement("h4");
-    plann.innerHTML ="Pricing Plan:" + "Includes 490 kms," +"excludes" + "fuel";
+    plann.innerHTML ="Pricing Plan:" + "Includes 490 kms," + fuel + " fuel";
 
     div11.append(cit);
     div22.append(plann);
-
 
     let days = document.createElement("p");
     days.innerHTML = `<i class="fas fa-rupee-sign"></i> ` + "mycar.rent "+ "days";
 
     let plan = document.createElement("p");
-    plan.innerHTML = "Pricing Plan: Includes";
-
-    
+    plan.innerHTML = "Pricing Plan: Includes ";
+   
     let img = document.createElement("img");
     img.src = mycar.imgUrl;
     img.style.width ="200px"
@@ -141,6 +142,7 @@ function cardetails(){
       var tr1 = document.createElement("tr");
       var td1 = document.createElement("td");
       td1.innerHTML = `<i class="fas fa-rupee-sign"></i> ` + mycar.rent;
+
       var td2 = document.createElement("td");
       td2.textContent = "Base fare";
       td2.style.width ="300px"
@@ -155,7 +157,7 @@ function cardetails(){
 
       var tr3 = document.createElement("tr");
       var td5 = document.createElement("td");
-      td5.textContent = "Included";
+      td5.textContent = fuel;
       var td6 = document.createElement("td");
       td6.textContent = "Insurance & GST";
       tr3.append(td6,td5)
@@ -190,9 +192,7 @@ function cardetails(){
       total.append(tr5,hr)
       one.append(table)
 
-
 let two = document.getElementById("two")
-
 
 var tr5 = document.createElement("tr");
 var td9 = document.createElement("td");
@@ -202,12 +202,11 @@ var td10 = document.createElement("td");
 td10.innerHTML = "Unlimited kms";
 tr5.append(td9,td10)
 
-
 var tr6 = document.createElement("tr");
 var td11 = document.createElement("td");
-td11.innerHTML = "Fuel";
+td11.innerHTML = "Fuel ";
 var td12 = document.createElement("td");
-td12.textContent = "Excluded";
+td12.textContent = fuel;
 tr6.append(td11,td12)
 
 var tr7 = document.createElement("tr");
