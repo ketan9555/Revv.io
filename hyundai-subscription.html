@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyundai Car Subscription</title>
+    <link rel="stylesheet" href="styles/hyundai-subscription.css" />
+    <link rel="stylesheet" href="styles/baseclasses.css">
+    <script
+      src="https://kit.fontawesome.com/8e42604464.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- modals -->
+    <div class="select-city-modal">
+      <div id="city-modal-content">
+        <div id="city-modal-header" class="d-flex space-between">
+          <h3>Select City</h3>
+          <button id="city-modal-close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="cities">
+          <h5 class="grey">Top Cities</h5>
+          <p class="bold">Bangalore</p>
+          <p class="bold">Hyderabad</p>
+          <p class="bold">Mumbai</p>
+          <p class="bold">Delhi-NCR</p>
+          <p class="bold">Chennai</p>
+          <p class="bold">Pune</p>
+          <hr />
+          <h5 class="grey">Other Cities</h5>
+          <p>Kolkata</p>
+          <p>Ahmedabad</p>
+          <p>Bhubaneswar</p>
+          <p>Chandigarh</p>
+          <p>Coimbatore</p>
+          <p>Jaipur</p>
+          <p>Kochi</p>
+          <p>Mangalore</p>
+          <p>Mysore</p>
+          <p>Nagpur</p>
+          <p>Surat</p>
+          <p>Tirupati</p>
+          <p>Trivandrum</p>
+          <p>Vadodara</p>
+          <p>Vijayawada</p>
+        </div>
+      </div>
+    </div>
+    <div id="nav-container"></div>
+    <div id="search-section">
+      <img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/locationIcon.png" alt="" id="location-icon">
+     
+      <div id="search-controls">
+         
+        <div id="form-header">
+          <img
+            src="https://www.revv.co.in/grapheneImages/newopen/logo_hyundai_sub_web@3x.png"
+            alt=""
+          />
+          <p>Powered by Revv</p>
+          <p>
+            Hyundai Cars Subscription in <span id="location-span">location</span>
+          </p>
+        </div>
+        
+        <div id="form-controls">
+           <div id="form-location">
+              <p>City</p>
+              <p id="location" class="d-flex space-between">Location  <i class="fas fa-chevron-down"></i></p>
+              
+            </div>
+          <div id="form-startdate">
+            <p><img src="https://www.revv.co.in/assets/RentalImages/HomeScreen/calenderIcon.png" alt="" id="calender-icon"><input type="date" name="" id="startdate"></p>
+          </div>
+          <div id="form-duration">
+            <p>Duration</p>
+            <p>1,3,or 6 Months</p>
+          </div>
+          <button id="search-btn" class="d-flex space-between">Search <i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <div id="search-banner">
+        <p>Looking for Hyundai Subscription</p>
+        <h2>By the year <a href="" id="sb-link">Explore ></a></h2>
+      </div>
+    </div>
+    <div id="how-it-works">
+      <h2>How it works</h2>
+      <div class="d-flex center">
+        <div>
+          <div class="how-it-works-icons" id="'card-icon-container">
+            <i class="fas fa-credit-card fa-2x" id="card-icon"></i>
+          </div>
+          <h2>Book & Pay</h2>
+          <p>Pick your favourite car,time,and place</p>
+        </div>
+        <div>
+          <div class="how-it-works-icons" id="car-icon"><i class="fas fa-car fa-3x"></i></div>
+          <h2>Receive</h2>
+          <p>We will deliver the car to your doorstep</p>
+        </div>
+        <div>
+          <div class="how-it-works-icons" id="wheel-icon"></div>
+          <h2>Drive</h2>
+          <p>Enjoy your Revv self drive</p>
+        </div>
+        <div>
+          <div class="how-it-works-icons" id="rotate-icon"></div>
+          <h2>Return</h2>
+          <p>
+            Get the car back to your preferred return location, and we will take
+            it from there
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="faq-section">
+      <h2>FAQs</h2>
+      <div class="faq">
+        <h3 class="questions">
+          <i class="fas fa-plus teal fa-minus mr-10"></i> What are my liabilities in case of damage/ accident of the Hyundai
+          car?
+        </h3>
+        <p class="answers hide-ans">
+          Your Hyundai car will be covered by comprehensive insurance, to take
+          care of damage cases. In case of damage, your liability would be
+          limited to the difference between the costs incurred to repair the
+          damage and the proceeds from insurance claim with maximum liability
+          limited to INR 10,000. In situations of irresponsible or unsafe or
+          negligent usage, there could be discretionary exceptions to this
+          policy, whereby you could be liable for all damages irrespective of
+          whether we are able to claim insurance in such cases.
+        </p>
+      </div>
+      <div class="faq">
+        <h3 class="questions">
+          <i class="fas fa-plus teal fa-minus mr-10"></i> Can I end my Hyundai car subscription early, or choose to keep the
+          car longer?
+        </h3>
+        <p class="answers hide-ans">
+          Yes, you can extend the car subscription anytime at normal prices. If
+          you wish to return the car; you can do so anytime by just paying the
+          fee difference. <br />
+          Extend anytime at normal prices <br />
+          Return anytime, Just pay fee difference
+        </p>
+      </div>
+      <div class="faq">
+        <h3 class="questions">
+          <i class="fas fa-plus teal fa-minus mr-10"></i> Are there any restrictions on what can I use the Hyundai car for?
+        </h3>
+        <p class="answers hide-ans">
+          You can use the Hyundai car you have subscribed to for pretty much all
+          the normal requirements. Abnormal usage (e.g., speed racing,
+          towing/pushing/propelling, transportation of goods or people on
+          commercial basis, transportation of large/heavy/hazardous items) is
+          not allowed.
+        </p>
+      </div>
+      <div class="faq">
+        <h3 class="questions"><i class="fas fa-plus teal fa-minus mr-10"></i> What are the benefits of Hyundai Subscriptions?</h3>
+        <p class="answers hide-ans">
+          No upfront payments such as down payment or road tax, flexibility of
+          subscribing for min. 1 month and extending or returning anytime,
+          insurance and maintenance included in monthly fees, 24X7 roadside
+          assistance and hassle-free service & maintenance are just a few
+          benefits of Revv Hyundai Subscriptions.
+        </p>
+      </div>
+      <div class="faq">
+        <h3 class="questions">
+          <i class="fas fa-plus teal fa-minus mr-10"></i> What will be the car registration type and whose name will it be
+          registered in?
+        </h3>
+        <p class="answers hide-ans">
+          The car will be registered as a premium commercial vehicle (black
+          plate) with an All India permit and can be driven anywhere within
+          India without any concerns. It will be registered in the name of Revv
+          (PrimeMover Mobility Technologies Pvt. Ltd.) or its supply partners.
+        </p>
+      </div>
+      <button id="view-all-btn" onclick="window.location.href='/'">View all</button>
+    </div>
+    <div id="press-coverage-container">
+      <!-- <h3>Press Coverage</h3> -->
+      <div id="press-coverage-links" class="d-flex center">
+        <a
+          href="http://www.businessinsider.in/These-four-apps-will-ease-your-travel-woes-this-summer-vacation/articleshow/52292818.cms"
+          ><img
+            src="	https://www.revv.co.in/imgs/company_logo/businessinsider.png"
+            alt=""
+        /></a>
+        <a
+          href="http://www.thehindubusinessline.com/companies/selfdrive-startup-revv-to-hit-the-fastlane/article8673700.ece"
+          ><img
+            src="https://www.revv.co.in/imgs/company_logo/the-hindu-newpaper.webp"
+            alt=""
+        /></a>
+        <a
+          href="http://auto.economictimes.indiatimes.com/news/aftermarket/self-drive-car-rental-co-revv-launches-its-operations-in-bangalore-with-doorstep-delivery/51518678"
+          ><img
+            src="https://www.revv.co.in/imgs/company_logo/The-Economic-Times.webp"
+            alt=""
+        /></a>
+        <a
+          href="http://www.financialexpress.com/industry/revv-launches-its-self-drive-car-rental-service-operations-in-chandigarh-with-25-cars/311864/"
+          ><img
+            src="https://www.revv.co.in/imgs/company_logo/Indian_express.webp"
+            alt=""
+        /></a>
+        <a href="http://yourstory.com/2015/08/revv-self-drive-car-rental/"
+          ><img
+            src="https://www.revv.co.in/imgs/company_logo/YourStory.png"
+            alt=""
+        /></a>
+
+        <a
+          href="http://bwdisrupt.businessworld.in/article/Revv-Self-Driven-Cars-Delivered-to-Your-Doorstep-/24-05-2016-98356/"
+          ><img
+            src="	https://www.revv.co.in/imgs/company_logo/BW-logo.png"
+            alt=""
+        /></a>
+      </div>
+    </div>
+    <div id="journey-section">
+      <h2>Our Journey <span id="journey-span">so far</span></h2>
+      <div id="stat-container" class="d-flex space-between wrap p-20">
+        <div class="d-flex col">
+          <img
+            src="https://www.revv.co.in/grapheneImages/newopen/ic-happy-cus.svg"
+            alt=""
+          />
+          <h3>2500+</h3>
+          <p>Happy Subscribers</p>
+        </div>
+        <div class="d-flex col">
+          <img
+            src="https://www.revv.co.in/grapheneImages/newopen/ic-across-india.svg"
+            alt=""
+          />
+          <h3>22+ Cities</h3>
+          <p>Across India</p>
+        </div>
+        <div class="d-flex col">
+          <img
+            src="https://www.revv.co.in/grapheneImages/newopen/ic-subscription.svg"
+            alt=""
+          />
+          <h3>50Mn+</h3>
+          <p>Kms Travelled</p>
+        </div>
+        <div class="d-flex col">
+          <img
+            src="https://www.revv.co.in/grapheneImages/newopen/ic-customer-rating.svg"
+            alt=""
+          />
+          <h3>4.8/5</h3>
+          <p>20k+ reviewers</p>
+        </div>
+      </div>
+    </div>
+    <div id="customer-section" style="border:3px solid red">
+      <h1>customer review section goes here</h1>
+    </div>
+    <div id="top-subscription-section" class="d-flex space-between">
+      <div class="top7">
+        <h3>Top 7 Hyundai Car Subscription Cities</h3>
+        <p>Hyundai Car Subscription in Bangalore</p>
+        <p>Hyundai Car Subscription in Hyderabad</p>
+        <p>Hyundai Car Subscription in Mumbai</p>
+        <p>Hyundai Car Subscription in Delhi-NCR</p>
+        <p>Hyundai Car Subscription in Chennai</p>
+        <p>Hyundai Car Subscription in Pune</p>
+        <p>Hyundai Car Subscription in Kolkata</p>
+      </div>
+      <div class="top7">
+        <h3>Top 7 Mahindra Car Subscription Cities</h3>
+        <p>Mahindra Car Subscription in Bangalore</p>
+        <p>Mahindra Car Subscription in Hyderabad</p>
+        <p>Mahindra Car Subscription in Mumbai</p>
+        <p>Mahindra Car Subscription in Delhi-NCR</p>
+        <p>Mahindra Car Subscription in Pune</p>
+        <p>Mahindra Car Subscription in Kolkata</p>
+        <p>Mahindra Car Subscription in Ahmedabad</p>
+      </div>
+      <div class="top7">
+        <h3>Top 7 Revv Car Subscription Cities</h3>
+        <p>Revv Car Subscription in Bangalore</p>
+        <p>Revv Car Subscription in Hyderabad</p>
+        <p>Revv Car Subscription in Mumbai</p>
+        <p>Revv Car Subscription in Delhi-NCR</p>
+        <p>Revv Car Subscription in Chennai</p>
+        <p>Revv Car Subscription in Pune</p>
+        <p>Revv Car Subscription in Kolkata</p>
+      </div>
+    </div>
+    <div id="contact-section" class="d-flex space-between">
+      <div>
+        <img
+          src="https://www.revv.co.in/imgs/revvLogo.png"
+          alt=""
+          id="revv_logo_contact"
+        />
+        <div id="social">
+          <a href="https://www.facebook.com/revvindia/"
+            ><i class="fab fa-facebook fa-2x teal"></i
+          ></a>
+          <a href=""><i class="fab fa-twitter fa-2x teal"></i></a>
+        </div>
+        <p id="copyright">
+          &copy; 2022 Primemover Mobility Technologies Pvt.Ltd. All rights
+          reserved
+        </p>
+      </div>
+      <div>
+        <h3>Have Questions ?</h3>
+        <h3 class="teal">+91-8929655141</h3>
+        <p>24/7 Customer Support</p>
+        <p>care@revv.co.in</p>
+      </div>
+    </div>
+    <div id="last-section">
+      <h2>
+        Revv Hyundai subscription – Safe, sanitized and comfortable cars for
+        everyday travel
+      </h2>
+      <p>
+        Taking a Revv Hyundai subscription in these times is the smartest
+        decision you can take for your family so that you can avoid the hassles
+        and unsafe environment of the public transport. While the Hyundai cars
+        are well known for their reliability and comfort with a mix of
+        cutting-edge features, the Revv subscription of Hyundai cars provide the
+        customers with access to the most popular Hyundai models. The cars are
+        thoroughly sanitized both inside and outside before the delivery, to
+        eliminate any chance of contamination from any surface of the car. The
+        Revv team members would also be wearing full Personal Protective
+        Equipment (PPE) while delivering the sanitized Hyundai cars for
+        subscription by Revv to your doorstep.
+      </p>
+
+      <h2>Hyundai subscription by Revv - Makes sense financially</h2>
+      <p>
+        With the self-drive Hyundai car subscription, you can enjoy your
+        favorite Hyundai car without having to commit your money into buying it.
+        Hyundai subscription by Revv comes at a reasonable pricing model, so
+        that the amount you pay as the rental is lesser than the down-payment,
+        EMIs, Insurance, Road Tax and Maintenance amount taken together. All
+        these facilities are, however, fully inclusive in the Hyundai
+        subscription by Revv. While you save yourself from paying for each of
+        the services separately, you can also change to a different car
+        make-model later if you get bored of it and decide to go for a different
+        car. While the minimum Hyundai subscription India period is 12 months,
+        you can reduce this period of subscription and move out of the contract
+        anytime by paying a pre closure penalty amount. There is also a buy-out
+        option in case you fall in love with the car and decide to buy it.
+      </p>
+
+      <h2>Taking Revv Hyundai subscription is as easy as 123</h2>
+      <p>
+        The Revv Hyundai cars subscription in Bangalore, Mumbai, Delhi, Chennai,
+        Hyderabad, Pune and in 18 more cities in India can be taken up in just a
+        few steps. First you need to choose the city that you need the Hyundai
+        cars subscription in, and then specify the start date and period for
+        which you want to take the subscription. You will be shown a list of
+        cars available and from these you can choose the one that you want. The
+        safe and sanitized Hyundai cars subscription will get initiated, and the
+        car will be delivered to your doorstep.
+      </p>
+    </div>
+  </body>
+  <script src="/scripts/hyundaiSubscription.js" type="module"></script>
+</html>

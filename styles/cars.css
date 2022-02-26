@@ -1,0 +1,151 @@
+#linksbar{
+    font-size: 10px;
+    color:teal;
+    padding:2px 40px;
+}
+
+#linksbar * {
+    color:teal;
+    text-decoration: none;
+}
+
+
+#filters-container{
+    flex: 3;
+    max-width: 350px;
+    border-top: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-radius: 2px;
+
+}
+
+#results-container{
+    flex:7;
+}
+#results-header{
+    align-items: center;
+}
+
+#cards-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-auto-rows: 450px; */
+    gap: 15px 15px;
+    margin: 0px 20px;
+}
+
+
+
+#first-card img, .car-img{
+    width: 100%;   
+    /* height: 100%; */
+}
+
+
+#reset-filter-btn{
+    background-color: white;
+    color: teal;
+    border: none;
+    /* height: fit-content; */
+    padding: 20px;
+}
+#reset-filter-btn2{
+    background-color:#0EBABA;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+.rentCard{
+    padding: 0px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    transition: box-shadow 0.7s;
+}
+.rentCard:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.car-details{
+    background-color: #f1f1f1;
+    padding: 10px;
+    box-sizing: border-box;
+    /* margin: 10px; */
+}
+.car-details:hover{
+    background-color: white;
+}
+.rent-details{
+    text-align: center;
+    height: max-content;
+    cursor: default;
+}
+.low,.avg,.Unlimited{
+    background-color: #E3E3E3;
+    margin: 0px 1px;
+    border-radius: 0px;
+
+}
+.rent-details > div{
+    /* border:1px solid; */
+    flex-grow: 1;
+}
+.price,.distance{
+    margin: 5px;
+    /* border: 1px solid; */
+    /* width: min-content; */
+}
+.extra-km{
+    background-color: white;
+    padding: 10px;
+    /* margin: 0px -10px; */
+}
+.book-btn{
+    background-color: teal;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    height: 34px;
+    width: 90px;
+    align-self: center;
+    border-radius: 5px;
+}
+@keyframes jump {
+    0%{ transform: translate(0px,0px);}
+    50%{transform: translate(0px,-5px);}
+    100%{transform: translate(0px,0px);}
+}
+.selected{
+    animation: jump 0.7s linear 1;
+    background-color: white;
+}
+
+#inc_exc{
+    text-decoration: underline;
+    font-weight: bold;
+}
+#fuel_ie ~ img{
+    position: relative;
+    top: 4px;
+    left: 4px;
+}
+
+.no-elements{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid; */
+}
+.rent-links{
+    text-decoration: none;
+    color:teal;
+    padding:0px  5px;
+    border-right: 1px solid;
+}
+@media screen and (max-width:990px) and (min-width:321px){
+    #cards-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
