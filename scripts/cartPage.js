@@ -1,8 +1,8 @@
 import { navbar }  from "../components/navbar.js";
 //console.log(navbar)
 
-let navbardiv = document.getElementById("container")
-navbardiv.innerHTML = navbar();
+// let navbardiv = document.getElementById("container")
+// navbardiv.innerHTML = navbar();
 
 // let footerdiv = document.getElementById("footer")
 // footerdiv.innerHTML = footer();
