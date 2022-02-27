@@ -19,7 +19,7 @@ let location_spans = [...document.querySelectorAll(".loc")];
 for (let span of location_spans) {
   span.textContent = localStorage.getItem("city");
 }
-var i = 0;
+
 
 let carsData = JSON.parse(localStorage.getItem("cars"));
 // process start date & end date
@@ -33,8 +33,8 @@ enddate = new Date(enddate[0], enddate[1] - 1, enddate[2]);
 startdate = new Date(startdate[0], startdate[1] - 1, startdate[2]);
 
 let diff = getNumberOfDays(startdate, enddate);
-console.log(diff);
 
+// function to calculate no of days b/w 2 given dates
 function getNumberOfDays(date1, date2) {
   // 1000ms * 60 secs * 60 mins * 24 hrs
   var oneDay = 1000 * 60 * 60 * 24;
@@ -50,20 +50,17 @@ carsData = carsData.map((el) => {
   return el;
 });
 
-let range_obj = {}
-// console.log()
+
 changeRangeAndPrice(diff,carsData);
 function changeRangeAndPrice(days, carsData) {
 
-  // if(days > 6){
-
-  // }
+ 
   carsData = carsData.map((el) => {
-    console.log(el.rent);
+    // console.log(el.rent);
     el.rent.low = el.rent.low + days * 400;
     el.rent.avg = el.rent.avg + days * 400;
     el.rent.Unlimited = el.rent.Unlimited + days * 400;
-    console.log(el.rent);
+    // console.log(el.rent);
 
     return el;
   });
@@ -74,13 +71,13 @@ function changeRangeAndPrice(days, carsData) {
 
 localStorage.setItem("cars", JSON.stringify(carsData));
 
-// console.log(carsData);
+
 renderCards(processActiveFilters(carsData));
-// renderCards([]);
+
 
 // render cars data ;
 function renderCards(carList) {
-  console.log("in render function", i++);
+  
   // console.log(carList);
   cards_container.textContent = "";
   if (carList.length == 0) {
