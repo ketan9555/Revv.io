@@ -306,7 +306,6 @@ function sortItems(event) {
       sortByPrice(true, data);
       break;
     case ELH:
-      console.log("elh");
       sortByExtra(false, data);
       break;
     case EHL:
@@ -316,9 +315,9 @@ function sortItems(event) {
       sortByPopularity(data);
       break;
   }
-  let extras = [];
-  data.forEach((el) => extras.push(el.extra));
-  console.log("after sort", extras);
+  // let extras = [];
+  // data.forEach((el) => extras.push(el.extra));
+  // console.log("after sort", extras);
   renderCards(data);
   let selected = localStorage.getItem("selected") || "low";
   [...document.querySelectorAll(`.${selected}`)].forEach((el) => {
@@ -358,7 +357,7 @@ function sortByExtra(reverse = false, data) {
     }
     return 0;
   });
-  console.log("after", data);
+  // console.log("after", data);
   return data;
 }
 
