@@ -12,6 +12,23 @@ document.getElementById("login").style.display ="block"
 document.querySelector("form").addEventListener("submit", signin);
 //var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
 
+
+let namm = localStorage.getItem("user")
+console.log(namm)
+
+if(namm != null && namm != "")
+{
+       document.getElementById("login").style.display ="none";
+        // document.getElementById("logshow").style.display ="none";
+        let showname = document.getElementById("x")
+        showname.innerHTML = namm;
+
+        let showlogo = document.getElementById("signlogo")
+        showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg";
+        showname.setAttribute("id","namshow")   
+}
+
+
 function signin(event){
   var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
 
@@ -44,19 +61,12 @@ for(var i=0; i<AllUsers.length; i++)
       {
         flag=true;
         alert("login successfully")
+
+        localStorage.setItem("user" ,AllUsers[i].username);
+        window.location.reload()
+
         document.getElementById("login").style.display ="none";
-        // document.getElementById("logshow").style.display ="none";
-        let showname = document.getElementById("x")
-        showname.innerHTML = AllUsers[i].username;
-        localStorage.setItem("user-name", AllUsers[i].username);
-        let showlogo = document.getElementById("signlogo")
-        showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg";
-        showname.setAttribute("id","namshow")        
-        showname.onclick = function () {
-             let logout =  document.createElement('h4')
-             logout.innerHTML ="Logout"
-        }
-        break;
+
       }
 }
 if(flag==false){
@@ -142,23 +152,4 @@ displayin.onclick = function close () {
 let displayup = document.getElementById("cross2")
 displayup.onclick = function close () {
   document.getElementById("signup").style.display ="none"
-}
-checkIfLoggedIn();
-
-function checkIfLoggedIn(){
-  let usr = localStorage.getItem('user-name')
-  if(usr !==  undefined){
-    let ls = document.getElementById('logshow');
-    ls.textContent = '';
-    let img = document.createElement('img');
-    img.id = 'signlogo'
-    img.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg";
-
-    let h4 = document.createElement('h4');
-    h4.id = 'namshow';
-    h4.textContent = `${usr}`;
-    
-    ls.append(img,h4);
-  }
-
 }
