@@ -1,4 +1,4 @@
-import { navbar }  from "./components/navbar.js";
+import { navbar }  from "../components/navbar.js";
 //console.log(navbar)
 
 let navbardiv = document.getElementById("nav-container")
