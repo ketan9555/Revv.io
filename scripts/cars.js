@@ -227,9 +227,14 @@ function rentsEventHandler() {
   });
 }
 
+let rentsObj = {
+  'low' : '150 Kms',
+  'avg' : '450 Kms',
+  'Unlimited': 'Unlimited Kms'
+};
+
 function select(event) {
   // console.log('event fired',this.tagName,event.target.tagName);
-
   let selected = localStorage.getItem("selected");
   // remove selected class from all elements
   [...document.querySelectorAll(`.${selected}`)].forEach((el) => {
@@ -272,7 +277,7 @@ function addBookButtonEventHandler() {
       let selected_car = JSON.parse(localStorage.getItem("car_selected"));
 
       selected_car.rent = selected_car.rent[selected];
-      selected_car.selected_Key = selected;
+      selected_car.selected_range = rentsObj[selected];
       console.log(selected_car);
 
       localStorage.setItem("selectedcar", JSON.stringify(selected_car));
@@ -361,6 +366,9 @@ function sortByPopularity(data) {
   data.sort((a, b) => a.popularity - b.popularity);
   return data;
 }
+
+// set default value for fuel_charge
+localStorage.setItem("fuel_charge", "Excluded");
 
 // fuelcost checkbox
 document.getElementById("fuel_ie").addEventListener("change", (event) => {

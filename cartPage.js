@@ -101,7 +101,7 @@ function cardetails(){
     cit.innerHTML = selectdcity ;
 
     let plann = document.createElement("h4");
-    plann.innerHTML ="Pricing Plan:" + "Unlimited kms  " + fuel + " fuel";
+    plann.innerHTML ="Pricing Plan:" + `${data.selected_range }  `+ fuel + " fuel";
 
     div11.append(cit);
     div22.append(plann);
@@ -224,7 +224,7 @@ var td9 = document.createElement("td");
 td9.style.width ="300px"
 td9.innerHTML = "Kms limit";
 var td10 = document.createElement("td");
-td10.innerHTML = "Unlimited kms";
+td10.innerHTML = `${data.selected_range}`;
 tr5.append(td9,td10)
 
 var tr6 = document.createElement("tr");
@@ -238,7 +238,7 @@ var tr7 = document.createElement("tr");
 var td13 = document.createElement("td");
 td13.innerHTML = "Extra kms charge";
 var td14 = document.createElement("td");
-td14.innerHTML = `<i class="fas fa-rupee-sign"></i> ` + 0 + "/km";
+td14.innerHTML = `<i class="fas fa-rupee-sign"></i> ` + ` ${data.extra}` + "/km";
 tr7.append(td13,td14)
 
 var tr8 = document.createElement("tr");
