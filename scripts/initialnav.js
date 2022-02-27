@@ -147,7 +147,8 @@ checkIfLoggedIn();
 
 function checkIfLoggedIn(){
   let usr = localStorage.getItem('user-name')
-  if(usr !==  undefined){
+  // console.log('usrname',usr);
+  if(usr !==  null){
     let ls = document.getElementById('logshow');
     ls.textContent = '';
     let img = document.createElement('img');
