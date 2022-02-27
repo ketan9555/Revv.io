@@ -368,7 +368,11 @@ function sortByPopularity(data) {
 }
 
 // set default value for fuel_charge
+
 localStorage.setItem("fuel_charge", "Excluded");
+let value = "excludes";
+document.getElementById('fuel_ie').value = value;
+document.getElementById("inc_exc").textContent = value;
 
 // fuelcost checkbox
 document.getElementById("fuel_ie").addEventListener("change", (event) => {
