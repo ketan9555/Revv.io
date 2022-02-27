@@ -12,29 +12,45 @@ document.getElementById("login").style.display ="block"
 document.querySelector("form").addEventListener("submit", signin);
 //var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
 
+let namm = localStorage.getItem("user")
+if( namm != ""  && namm != null){
+
+  document.getElementById("login").style.display ="none";
+  // document.getElementById("logshow").style.display ="none";
+  let showname = document.getElementById("x"); 
+  showname.innerHTML = namm;
+
+  let showlogo = document.getElementById("signlogo")
+  showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg";
+}
+
 function signin(event){
   var AllUsers = JSON.parse(localStorage.getItem("userDataBase"));
 
-event.preventDefault();
+// event.preventDefault();
 var mail = document.getElementById("outmail").value
 var pass = document.getElementById("outpass").value
 // console.log(regdUsers.username)
-  
+
+
+
+
 for(var i=0; i<AllUsers.length; i++)
 {
     var flag=false;  
-    if(mail == []){
+if(mail == []){
         let text = document.getElementById("mymail");
         text.style.color ="red";
         flag=true;
         break;
    }
-   else if(mail !== []){
+else if(mail !== []){
     let text = document.getElementById("mymail");
     text.style.color ="#0ebaba";
     flag=true;
    }
-     if(pass == []){
+   
+if(pass == []){
         let text = document.getElementById("mypass");
         text.style.color ="red";
         flag=true;
@@ -43,20 +59,24 @@ for(var i=0; i<AllUsers.length; i++)
     else  if(AllUsers[i].mail == mail && AllUsers[i].password == pass)
       {
         flag=true;
+        
         alert("login successfully")
-        document.getElementById("login").style.display ="none";
-        // document.getElementById("logshow").style.display ="none";
-        let showname = document.getElementById("x")
-        showname.innerHTML = AllUsers[i].username;
+        localStorage.setItem("user", AllUsers[i].username )
+        window.location.reload();
+        // document.getElementById("login").style.display ="none";
+        // // document.getElementById("logshow").style.display ="none";
+        // let showname = document.getElementById("x");
+        
+        // showname.innerHTML = AllUsers[i].username;
+        // let showlogo = document.getElementById("signlogo")
+        // showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg";
 
-        let showlogo = document.getElementById("signlogo")
-        showlogo.src ="https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-nav.svg";
-        showname.setAttribute("id","namshow")        
-        showname.onclick = function () {
-             let logout =  document.createElement(h4)
-             logout.innerHTML ="Logout"
-        }
-        break;
+        // showname.setAttribute("id","namshow")        
+        // showname.onclick = function () {
+        //      let logout =  document.createElement(h4)
+        //      logout.innerHTML ="Logout"
+        // }
+        // break;
       }
 }
 if(flag==false){
