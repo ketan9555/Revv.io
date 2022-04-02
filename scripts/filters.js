@@ -19,7 +19,7 @@ function filterBySegment(segments,data){
 
 // returns an array of elements which contains the transmission types inclucded in the transmissions parameter
 function filterByTransmissionType(transmissions,data){
-    let res = data.filter(el => transmissions.includes(el.transmission));
+    let res = data.filter(el => transmissions.includes(el.transmission_type));
     return res;
 
 }
@@ -30,7 +30,7 @@ function filterBySeating(seatings,data){
 }
 // returns an array of elements which contains fuel types inclucded in the fuels parameter
 function filterByFuelType(fuels,data){
-    let res = data.filter(el => fuels.includes(el.fuel));
+    let res = data.filter(el => fuels.includes(el.fuel_type));
     return res;
 }
 

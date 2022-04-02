@@ -9,7 +9,7 @@ import {
   filterByFuelType,
 } from "./filters.js";
 
-localStorage.setItem("cars", JSON.stringify(cars));
+
 
 const res_container = document.getElementById("results-container");
 const cards_container = document.getElementById("cards-container");
@@ -21,10 +21,9 @@ for (let span of location_spans) {
 }
 
 
-let carsData = JSON.parse(localStorage.getItem("cars"));
 // process start date & end date
-let startdate = localStorage.getItem("start-date") || "2022-02-28";
-let enddate = localStorage.getItem("end-date") || "2022-03-06";
+let startdate = localStorage.getItem("start-date") || "2022-04-3";
+let enddate = localStorage.getItem("end-date") || "2022-04-06";
 
 enddate = enddate.split("-");
 startdate = startdate.split("-");
@@ -33,47 +32,30 @@ enddate = new Date(enddate[0], enddate[1] - 1, enddate[2]);
 startdate = new Date(startdate[0], startdate[1] - 1, startdate[2]);
 
 let diff = getNumberOfDays(startdate, enddate);
+// temporarily commented
+getDbdata(location,diff).then((carsData) => {
+  carsData.availiable.forEach(el => {
+    el.isAvailiable  = true;
+    el.popularity = Math.round(Math.random() * 100);
 
-// function to calculate no of days b/w 2 given dates
-function getNumberOfDays(date1, date2) {
-  // 1000ms * 60 secs * 60 mins * 24 hrs
-  var oneDay = 1000 * 60 * 60 * 24;
+  })
+  carsData.soldout.forEach(el => {
+    el.isAvailiable = false;
+    el.popularity = Math.round(Math.random() * 100);
+  })
 
-  var diffInTime = date2.getTime() - date1.getTime();
-
-  return Math.round(diffInTime / oneDay);
-}
-// extra & popularity properities to objects
-carsData = carsData.map((el) => {
-  el.extra = Math.round(Math.random() * 10) + 5;
-  el.popularity = Math.round(Math.random() * 100);
-  return el;
+  let cars = [...carsData.availiable,...carsData.soldout];
+  localStorage.setItem("cars", JSON.stringify(cars));
+  // console.log(carsData.availiable);
+  // carsData.availiable.forEach(el => console.log(el));
+  renderCards(cars);
+  
 });
 
-
-changeRangeAndPrice(diff,carsData);
-function changeRangeAndPrice(days, carsData) {
-
- 
-  carsData = carsData.map((el) => {
-    // console.log(el.rent);
-    el.rent.low = el.rent.low + days * 400;
-    el.rent.avg = el.rent.avg + days * 400;
-    el.rent.Unlimited = el.rent.Unlimited + days * 400;
-    // console.log(el.rent);
-
-    return el;
-  });
+  // renderCards(JSON.parse(localStorage.getItem('cars')));
 
 
-}
-
-
-localStorage.setItem("cars", JSON.stringify(carsData));
-
-
-renderCards(processActiveFilters(carsData));
-
+// renderCards(processActiveFilters(carsData));
 
 // render cars data ;
 function renderCards(carList) {
@@ -166,6 +148,7 @@ document
 
 function processActiveFilters() {
   // make a copy of carsData
+  let carsData = JSON.parse(localStorage.getItem('cars'));
   let filt_data = carsData.map((el) => el);
 
   //   console.log(filt_data);
@@ -252,14 +235,14 @@ function select(event) {
     });
   } else if (this.classList.contains("avg")) {
     // console.log("avg");
-    localStorage.setItem("selected", "avg");
+    localStorage.setItem("selected", "mid");
 
     [...document.querySelectorAll(".avg")].forEach((el) => {
       el.classList.add("selected");
     });
   } else if (this.classList.contains("Unlimited")) {
     // console.log("Unlimited");
-    localStorage.setItem("selected", "Unlimited");
+    localStorage.setItem("selected", "high");
 
     [...document.querySelectorAll(".Unlimited")].forEach((el) => {
       el.classList.add("selected");
@@ -275,12 +258,24 @@ function addBookButtonEventHandler() {
     el.addEventListener("click", (event) => {
       let selected = localStorage.getItem("selected");
       let selected_car = JSON.parse(localStorage.getItem("car_selected"));
-
-      selected_car.rent = selected_car.rent[selected];
-      selected_car.selected_range = rentsObj[selected];
+      // console.log(selected_car);
+      selected_car.rent = selected_car.rates[selected].cost;
+      selected_car.selected_range = selected_car.rates[selected].dist;
       console.log(selected_car);
 
-      localStorage.setItem("selectedcar", JSON.stringify(selected_car));
+      let modified = {
+        imgUrl : selected_car.image_url,
+        fuel: selected_car.fuel_type,
+        transmission: selected_car.transmission_type,
+        seats : selected_car.seats,
+        model: selected_car.model_name,
+        modelId : selected_car.modelId,
+        extra: selected_car.extraChargePerKm,
+        selected_range: selected_car.selected_range,
+        rent : selected_car.rates[selected].cost
+      }
+
+      localStorage.setItem("selectedcar", JSON.stringify(modified));
       window.location.href = "../cartPage.html";
     });
   });
@@ -378,20 +373,35 @@ document.getElementById("fuel_ie").addEventListener("change", (event) => {
   event.stopPropagation();
   let value = "excludes";
   localStorage.setItem("fuel_charge", "Excluded");
-  carsData = JSON.parse(localStorage.getItem("cars"));
+  let carsData = JSON.parse(localStorage.getItem("cars"));
   if (document.getElementById("fuel_ie").checked) {
     value = "includes";
     localStorage.setItem("fuel_charge", "Included");
-    // console.log(typeof carsData)
-    carsData = carsData.map((el) => {
-      el.rent.low += 1200;
-      el.rent.avg += 1100;
-      el.rent.Unlimited += 1050;
-      el.extra += 3;
-      return el;
-    });
+ 
   }
   renderCards(processActiveFilters(carsData));
 
   document.getElementById("inc_exc").textContent = value;
 });
+
+// utills
+
+async function getDbdata(location,duration){
+  let dbdata = await fetch(
+    `http://localhost:5000/q/6243fdb60056a6196ec07b8d/${duration}`
+  );
+  let data = await dbdata.json();
+
+  return data;
+}
+
+
+// function to calculate no of days b/w 2 given dates
+function getNumberOfDays(date1, date2) {
+  // 1000ms * 60 secs * 60 mins * 24 hrs
+  var oneDay = 1000 * 60 * 60 * 24;
+
+  var diffInTime = date2.getTime() - date1.getTime();
+
+  return Math.round(diffInTime / oneDay);
+}
