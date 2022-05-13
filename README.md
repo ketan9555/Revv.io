@@ -1,6 +1,6 @@
-# Revv.co.in_backend_clone
+# Revv.io
 
-Backend API for a Revv clone website, built using NodeJS, Express, Mongoose, MongoDB Atlas and AWS EC2, Heroku for storage.
+This is a website clone of https://www.revv.co.in/ , this is a car rental website, built using Html, Css, JavaScript, NodeJS, Express, Mongoose, MongoDB Atlas and AWS EC2, Heroku for storage.
 
 ## Documentation for API?
 
